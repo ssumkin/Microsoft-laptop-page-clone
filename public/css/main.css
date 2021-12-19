@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+} 
+
+#body-wrap {
+    width: 100%;
+}
+
+#main-image {
+    width: 100%;
+    height: 1080px;
+    background-image: url(../images/main/main\(1920x1080\).jpg);
+    background-repeat: no-repeat;
+}
+
+#sub-image {
+    width: 100%;
+    height: 600px;
+    background-image: url(../images/main/sub\ main.jpg);
+    background-repeat: no-repeat;
+}
+
+#design-iamge {
+    width: 100%;
+    height: 600px;
+    background-image: url(../images/main/laptop\ design.jpg);
+    background-repeat: no-repeat;
+}
