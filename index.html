@@ -17,20 +17,23 @@
         <header id="header-wrap" class="center">
             <div id="main-logo">
                 <a href="#"><img src="./public/images/main/logo.jpg" alt="Microsoft logo"></a>
-            </div> 
-
-            <div class="pipe"></div>
-
+            </div>  
+            
             <div id="surface">
                 <button>Surface</button>
-            </div>
-
+                <a class="underline" href="#">Surface</a>
+            </div> 
             <!-- 메뉴 영역 -->
-            <nav id="sub-menu" class="button-after">
+            <nav id="sub-menu">
                 <ul>
                     <li>
                         <div>
-                            <button>컴퓨터들</button>
+                            <a href="#">홈</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <button class="button-after underline">컴퓨터들</button>
                             <ul>
                                 <li>
                                     <button>투인원PC</button>
@@ -58,7 +61,7 @@
                     </li>
                     <li>
                         <div>
-                            <button>비즈니스용 컴퓨터</button>
+                            <button class="button-after underline">비즈니스용 컴퓨터</button>
                             <ul>
                                 <li> 
                                     <button>투인원 태블릿</button> 
@@ -100,7 +103,7 @@
                     </li>
                     <li>
                         <div>
-                            <button>주변 기기</button>
+                            <button class="button-after underline">주변 기기</button>
                             <ul>
                                 <li><a href="#">Surface Pro X 주변 기기</a></li>
                                 <li><a href="#">Surface Pro 주변 기기</a></li>
@@ -112,113 +115,115 @@
                     </li>
 
                     <li>
-                        <a href="#">구입처</a>
+                        <a class="underline" href="#">구입처</a>
                     </li>
 
                     <li>
-                        <a href="#">지원</a>
+                        <a class="underline" href="#">지원</a>
                     </li>
 
                 </ul>
             </nav>
 
-            <!-- microsofr 전체 메뉴 -->
-            <div id="main-menu">
-                <button>Microsoft 전체</button>
-                <nav>
-                    <ul>
-                        <li>
-                            <ul>
-                                <li><a href="#">Microsoft 365</a></li>
-                                <li><a href="#">Office</a></li>
-                                <li><a href="#">Windows</a></li>
-                                <li><a href="#">Surface</a></li>
-                                <li><a href="#">Xbox</a></li>
-                                <li><a href="#">지원</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <button>소프트웨어</button>
-                            <ul>
-                                <li><a href="#">Windows 앱</a></li>
-                                <li><a href="#">OneDrive</a></li>
-                                <li><a href="#">Outlook</a></li>
-                                <li><a href="#">Skype</a></li>
-                                <li><a href="#">OneNote</a></li>
-                                <li><a href="#">Microsoft Teams</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <button>PC 및 장치</button>
-                            <ul>
-                                <li><a href="#">Xbox 쇼핑</a></li>
-                                <li><a href="#">주변 기기</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <button>엔터테인먼트</button>
-                            <ul>
-                                <li><a href="#">Xbox Game Padd Ultimate</a></li>
-                                <li><a href="#">Xbox Live Gold</a></li>
-                                <li><a href="#">Xbox 및 게임</a></li>
-                                <li><a href="#">PC 게임</a></li>
-                                <li><a href="#">Windows 게임</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <button>기업 고객용</button>
-                            <ul>
-                                <li><a href="#">Microsoft Cloud</a></li>
-                                <li><a href="#">Microsoft Azure</a></li>
-                                <li><a href="#">Microsoft Dynamics 365</a></li>
-                                <li><a href="#">Microsoft 365</a></li>
-                                <li><a href="#">Windows 365</a></li>
-                                <li><a href="#">Microsoft Industry</a></li>
-                                <li><a href="#">Power Platform</a></li>
-                                <li><a href="#">비즈니스 쇼핑</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <button>Developer & IT</button>
-                            <ul>
-                                <li><a href="#">.NET</a></li>
-                                <li><a href="#">Vidsual Studio</a></li>
-                                <li><a href="#">Windows Server</a></li>
-                                <li><a href="#">Windows 앱 개발</a></li>
-                                <li><a href="#">문서</a></li>
-                                <li><a href="#">Power Platform</a></li>
-                                <li><a href="#">Power Apps</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <button>기타</button>
-                            <ul>
-                                <li><a href="#">무료 다운로드 및 보안</a></li>
-                                <li><a href="#">교육</a></li>
-                                <li><a href="#">볼륨 라이선싱</a></li>
-                            </ul>
-                        </li>
+            <!-- microsoft 전체 메뉴 -->
+            <div id="main-menu-wrap">
+                <div id="main-menu">
+                    <button class="button-after underline">Microsoft 전체</button>
+                    <nav>
+                        <ul>
+                            <li>
+                                <ul>
+                                    <li><a href="#">Microsoft 365</a></li>
+                                    <li><a href="#">Office</a></li>
+                                    <li><a href="#">Windows</a></li>
+                                    <li><a href="#">Surface</a></li>
+                                    <li><a href="#">Xbox</a></li>
+                                    <li><a href="#">지원</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <button>소프트웨어</button>
+                                <ul>
+                                    <li><a href="#">Windows 앱</a></li>
+                                    <li><a href="#">OneDrive</a></li>
+                                    <li><a href="#">Outlook</a></li>
+                                    <li><a href="#">Skype</a></li>
+                                    <li><a href="#">OneNote</a></li>
+                                    <li><a href="#">Microsoft Teams</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <button>PC 및 장치</button>
+                                <ul>
+                                    <li><a href="#">Xbox 쇼핑</a></li>
+                                    <li><a href="#">주변 기기</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <button>엔터테인먼트</button>
+                                <ul>
+                                    <li><a href="#">Xbox Game Padd Ultimate</a></li>
+                                    <li><a href="#">Xbox Live Gold</a></li>
+                                    <li><a href="#">Xbox 및 게임</a></li>
+                                    <li><a href="#">PC 게임</a></li>
+                                    <li><a href="#">Windows 게임</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <button>기업 고객용</button>
+                                <ul>
+                                    <li><a href="#">Microsoft Cloud</a></li>
+                                    <li><a href="#">Microsoft Azure</a></li>
+                                    <li><a href="#">Microsoft Dynamics 365</a></li>
+                                    <li><a href="#">Microsoft 365</a></li>
+                                    <li><a href="#">Windows 365</a></li>
+                                    <li><a href="#">Microsoft Industry</a></li>
+                                    <li><a href="#">Power Platform</a></li>
+                                    <li><a href="#">비즈니스 쇼핑</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <button>Developer & IT</button>
+                                <ul>
+                                    <li><a href="#">.NET</a></li>
+                                    <li><a href="#">Vidsual Studio</a></li>
+                                    <li><a href="#">Windows Server</a></li>
+                                    <li><a href="#">Windows 앱 개발</a></li>
+                                    <li><a href="#">문서</a></li>
+                                    <li><a href="#">Power Platform</a></li>
+                                    <li><a href="#">Power Apps</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <button>기타</button>
+                                <ul>
+                                    <li><a href="#">무료 다운로드 및 보안</a></li>
+                                    <li><a href="#">교육</a></li>
+                                    <li><a href="#">볼륨 라이선싱</a></li>
+                                </ul>
+                            </li>
 
-                        <li><a href="#">사이트맵 보기</a></li>
-                    </ul>
-                </nav>
+                            <li><a href="#">사이트맵 보기</a></li>
+                        </ul>
+                    </nav>
+                </div>
 
                 <!-- 검색 영역 -->
-                <div>
+                <div id="search-wrap">
                     <form action="https://www.microsoft.com/ko-kr/search/result.aspx" method="GET">
                         <input type="text" placeholder="Microsoft.com 검색">
-                        <button>Microsoft.com 검색</button>
+                        <button class="underline">검색</button>
                     </form>
-                    <button>취소</button>
+                    <button id="cancel-button">취소</button>
                 </div>
 
                 <!-- 장바구니 -->
-                <div>
-                    <a href="#">카트</a>
+                <div id="cart">
+                    <a class="underline" href="#">카트</a>
                 </div>
 
                 <!-- 로그인 -->
-                <div>
+                <div id="sign-in">
                     <a href="#">로그인</a>
                 </div>
             </div>
@@ -228,27 +233,27 @@
         <section>
 
             <!-- 메인 이미지 > css에서 이미지 삽입 -->
-            <div>
+            <div id="main-image-wrap">
                 <div id="main-image">
-                    
+                    <div id="main-img-content-wrap">
+                        <div id="main-img-content">
+                            <strong>Windows 11으로 무료 업그레이드</strong>
+                            <h2>Surface Laptop Go</h2>
+                            <p>어디서나 활용 가능한 노트북</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <div>
-                <strong>Windows 11으로 무료 업그레이드</strong>
-                <h2>Surface Laptop Go</h2>
-                <p>어디서나 활용 가능한 노트북</p>
-            </div>
-
+ 
             <!-- 메인 메뉴 밑 개요, 기술 사양 탭 메뉴 부분 -->
-            <div>
+            <div id="content-wrap">
                 <div>
                     <h2>Surface Laptop Go</h2>
                 </div>
 
-                <div>
+                <div id="content">
                     <ul>
-                        <li><a href="#">개요</a></li>
+                        <li><a class= "active" href="#">개요</a></li>
                         <li><a href="#">기술 사양</a></li>
                     </ul>
                 </div>
@@ -259,52 +264,52 @@
             </div>
 
             <!-- 탭 메뉴 밑 슬라이드 내용 전환 부분 --> 
-            <div class="splide">
-                <div class="splide__track">
-                    <ul class="splide__list">
-                        <li class="splide__slide">
-                            <div>
-                                <blockquote><span>“</span>Microsoft Surface Laptop Go는 부담 없는 가격, 뛰어난 제작 품질, 고화질 디스플레이 덕분에 전체 Surface 라인업에서 의심할 여지 없이 가장 돋보이는 제품입니다. 이 노트북은 저가형 노트북의 형태를 새롭게 정의합니다.<span>”</span></blockquote>
-                                <div><p>- Tech Radar | October 13, 2020</p></div>
-                                <a href="#"><img src="./public/images/main/techradar.jpg" alt=""></a>
-                            </div>
-                        </li>
-                        <li class="splide__slide">
-                            <div>
-                                <blockquote><span>“</span>Surface Laptop Go는 TechRadar에서 사용한 것들 가운데 가장 작고 사랑스러운 노트북입니다.<span>”</span></blockquote>
-                                <div><p>- Tech Radar | October 13, 2020</p></div>
-                                <a href="#"><img src="./public/images/main/techradar.jpg" alt=""></a>
-                            </div>
-                        </li>
-                        <li class="splide__slide">
-                            <div>
-                                <blockquote><span>“</span>Surface Laptop Go는 재미 있고 작지만 사랑스러운 노트북이라는 표현이 딱입니다.<span>”</span></blockquote>
-                                <div><p>- Windows Central | October 13, 2020</p></div>
-                                <a href="#"><img src="./public/images/main/windows central.jpg" alt=""></a>
-                            </div>
-                        </li>
-                    </ul>
+            <div id="splide-wrap">
+                <div class="splide outline center">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide">
+                                <div class="slide">
+                                    <blockquote><span>“</span>Microsoft Surface Laptop Go는 부담 없는 가격, 뛰어난 제작 품질, 고화질 디스플레이 덕분에 전체 Surface 라인업에서 의심할 여지 없이 가장 돋보이는 제품입니다. 이 노트북은 저가형 노트북의 형태를 새롭게 정의합니다.<span>”</span></blockquote>
+                                    <div><p>- Tech Radar | October 13, 2020</p></div>
+                                    <a href="#"><img src="./public/images/main/techradar.jpg" alt=""></a>
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <div class="slide">
+                                    <blockquote><span>“</span>Surface Laptop Go는 TechRadar에서 사용한 것들 가운데 가장 작고 사랑스러운 노트북입니다.<span>”</span></blockquote>
+                                    <div><p>- Tech Radar | October 13, 2020</p></div>
+                                    <a href="#"><img src="./public/images/main/techradar.jpg" alt=""></a>
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <div class="slide">
+                                    <blockquote><span>“</span>Surface Laptop Go는 재미 있고 작지만 사랑스러운 노트북이라는 표현이 딱입니다.<span>”</span></blockquote>
+                                    <div><p>- Windows Central | October 13, 2020</p></div>
+                                    <a href="#"><img src="./public/images/main/windows central.jpg" alt=""></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
-            <div>
+            <div class="outline guide center">
                 <h2>Surface 역사상 최경량 제품</h2>
                 <p> </p>
                 <p>외관이 멋지고 성능도 우수하며 배터리로도 하루 종일 사용 가능<sup>1</sup>할 뿐 아니라 가성비도 매우 뛰어납니다.&nbsp;</p>
             </div>
 
             <!-- 서브 이미지 > css에서 이미지 삽입 -->
-            <div>
-                <div id="sub-image">
-
-                </div>
+            <div id="sub-image-wrap" class="outline center">
+                <div id="sub-image"></div>
             </div>
  
             <!-- 제품 설명 부분 반응형 설계 -->
-            <div>
+            <div id="product-info" class="outline center">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-sm-6 col-md-3">
                             <div class="col-md-12">
                                 <img src="./public/images/main/battery time.jpg" alt="배터리 시간">
                                 <div>
@@ -312,7 +317,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-sm-6 col-md-3">
                             <div class="col-md-12">
                                 <img src="./public/images/main/weight.jpg" alt="최소 무게">
                                 <div>
@@ -320,7 +325,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-sm-6 col-md-3">
                             <div class="col-md-12">
                                 <img src="./public/images/main/core.jpg" alt="코어">
                                 <div>
@@ -328,7 +333,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-sm-6 col-md-3">
                             <div class="col-md-12">
                                 <img src="./public/images/main/camera.jpg" alt="카메라">
                                 <div>
@@ -339,44 +344,44 @@
                     </div>
                 </div>
 
-                <div>
+                <div id="product-info-check">
                     <a href="#">모든 기술 사양 확인</a>
                 </div>
             </div>
  
-            <div>
+            <div class="outline guide center">
                 <h2>고급스러운 Surface 디자인과 최고의 가성비</h2>
                 <p> </p>
                 <p>초경량이라 휴대가 간편하고, 매일 사용하는 앱<sup>*,2</sup>을 원활하게 실행할 수 있으며, 고급스러운 소재가 사용되어 어디서나 돋보이는 노트북입니다.</p>
             </div>
 
             <!-- 디자인 이미지 > css에서 이미지 삽입 -->
-            <div>
-                <div id="design-iamge">
+            <div id="design-image-wrap" class="outline">
+                <div id="design-image">
 
                 </div>
             </div>
 
             <!-- 디자인 설명 부분 반응형 설계 -->
-            <div>
+            <div id="design-info" class="outline">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4">
-                            <div class="col-md-12">
+                            <div class="design-content col-md-12">
                                 <img src="./public/images/main/design1.jpg" alt="디자인">
                                 <h3>세련된 디자인과 최고의 가성비</h3>
                                 <p>더욱 넓게 활용 가능한 12.4인치 PixelSense™ 터치 스크린이 채택되었으며 고급스러운 소재가 사용된 Surface 사상 최경량 노트북입니다.</p>
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="col-md-12">
+                            <div class="design-content col-md-12">
                                 <img src="./public/images/main/design2.jpg" alt="디자인">
                                 <h3>친숙한 기능과 신뢰할 수 있는 Windows Hello 보안</h3>
                                 <p>지문 전원 단추(일부 모델)를 사용해 원터치 방식으로 로그인할 수 있으며, 풀 사이즈 키보드로 하루 종일 편안하게 입력을 할 수 있습니다. 또한 Dolby® Audio™를 통해 실감나는 Omnisonic 사운드를 즐길 수 있습니다.</p>
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="col-md-12">
+                            <div class="design-content col-md-12">
                                 <img src="./public/images/main/design3.jpg" alt="디자인"> 
                                 <h3>즐겨 사용하는 앱으로 손쉽게 작업 완료</h3>
                                 <p>효율적으로 연결하여 공동 작업을 원활하게 처리할 수 있습니다. 하루 종일 사용 가능한 배터리<sup>1</sup>, 10세대 Intel® Core™, 최대 8GB RAM이 제공되므로 즐겨 사용하는 앱<sup>*,2</sup>을 원활하게 실행할 수 있습니다.</p>
@@ -385,16 +390,15 @@
                     </div>
                 </div>
 
-                <div>
+                <div class="guide center">
                     <h2>Surface Laptop Go를 사용해 보고 몇 가지 주요 기능을 확인해 보세요.</h2>
                 </div>
             </div>
 
             <!-- 매우 긴 이미지를 가로로 스크롤 하며 보여주는 부분 -->
-            <div>
+            <div id="scroll-image" class="outline">
                 <div id="spin-container">
-                    <div>
-                        <img src="./public/images/main/scroll image.jpg" alt="스크롤">
+                    <div> 
                     </div>
                 </div>
                 <div id="spin-wrapper">
@@ -409,19 +413,19 @@
                 </div>
             </div>
 
-            <div>
+            <div class="outline guide center">
                 <h2>고속 프로세서 하나로 누리는 세 가지 유용한 혜택</h2>
                 <p> </p>
                 <p>모든 항목을 온라인에서 저장하나요, 아니면 로컬에 유지하나요? 손가락 터치로 로그인하고 싶으세요? 파일과 사진을 위한 저장 공간이 더 많이 필요하세요? 10세대 Intel® Core™ i5 프로세서를 통해 구동되는 용도에 적합한 장치를 구입하세요.</p>
             </div>
 
             <!-- 혜택 설명 부분 -->
-            <div>
+            <div id="benefits-info" class="outline">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4">
                             <div class="col-md-12">
-                                <div>
+                                <div class="benefits-content"> 
                                     <img src="./public/images/main/benefits1.jpg" alt="혜택">
                                     <h3>클라우드 저장소에 최적화된 합리적인 가격대의 장치</h3>
                                     <div>
@@ -432,13 +436,13 @@
                                             <li>Microsoft 365 구독 구매 시 1TB OneDrive 클라우드 저장소 제공<sup>*</sup></li>
                                         </ul>
                                     </div>
-                                    <a href="#">지금 구입</a>
+                                    <a href="#">지금 구입</a> 
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="col-md-12">
-                                <div>
+                                <div class="benefits-content"> 
                                     <img src="./public/images/main/benefits2.jpg" alt="혜택">
                                     <h3>원터치 로그인, 더 많은 로컬 저장 공간</h3>
                                     <div>
@@ -449,13 +453,13 @@
                                             <li>지문 전원 단추와 원터치 로그인</li>
                                         </ul>
                                     </div>
-                                    <a href="#">지금 구입</a>
+                                    <a href="#">지금 구입</a> 
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="col-md-12">
-                                <div>
+                                <div class="benefits-content"> 
                                     <img src="./public/images/main/benefits3.jpg" alt="혜택">
                                     <h3>업계 최대 용량의 로컬 저장 공간, 원터치 로그인</h3>
                                     <div>
@@ -466,7 +470,7 @@
                                             <li>지문 전원 단추와 원터치 로그인</li>
                                         </ul>
                                     </div>
-                                    <a href="#">지금 구입</a>
+                                    <a href="#">지금 구입</a> 
                                 </div>
                             </div>
                         </div>
@@ -474,33 +478,45 @@
                 </div> 
             </div>
 
-            <div>
+            <div class="outline guide center">
                 <h2>학습과 성장, 창작 그리고 휴식</h2>
                 <p> </p>
                 <p>Surface&nbsp;Laptop&nbsp;Go에서 선명한 고품질 프레젠테이션을 재생 및 코딩하여 제공하고, 밤새 영화를 보며 휴식을 취하고, 아이디어를 멋진 시각적 스토리로 바꿔 보세요.</p>
             </div>
 
             <!-- 마크, 넷플릭스 등 프로그램 이미지 보여주는 부분 -->
-            <div>
+            <div id="program-info" class="outline">
                 <div>
-                    <div id="app-imges"></div>
+                    <div id="maincraft">
+                        <img src="./public/images/main/minecraft.jpg" alt="마인크래프트">
+                    </div>
+                    <div id="flipgrid">
+                        <img src="./public/images/main/flipgrid.jpg" alt="플립그리드">
+                    </div>
+                    <div id="netflix">
+                        <img src="./public/images/main/netflix.jpg" alt="넷플릭스">
+                    </div>
+                    <div id="adobe-spark">
+                        <img src="./public/images/main/adobe spark.jpg" alt="어도브 스파크">
+                    </div>
+ 
                 </div>
-                <div>
-                    <img src="./public/images/main/minecraft logo.jpg" alt="마인크래프트 로고">
-                    <img src="./public/images/main/flipgrid logo.jpg" alt="플립그리드 로고">
-                    <img src="./public/images/main/netflix logo.jpg" alt="넷플릭스 로고">
-                    <img src="./public/images/main/adobe spark logo.jpg" alt="어도브 스파크 로고">
+                <div id="logo-wrap">
+                    <div id="m_logo"></div>
+                    <div id="f_logo"></div>
+                    <div id="n_logo"></div>
+                    <div id="a_logo"></div> 
                 </div>
             </div>
 
-            <div>
+            <div class="outline guide center">
                 <h2>하루 종일 지속되는 전원 공급</h2>
                 <p> </p>
                 <p>우수한 하드웨어 기능을 통해 Microsoft 365 등의 가장 많이 사용하는 앱<sup>*</sup>을 실행할 수 있습니다.</p>
             </div>
 
             <!-- 영상 시청 부분 -->
-            <div>
+            <div id="video-info" class="outline">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4">
@@ -561,7 +577,7 @@
 
                         <div class="col-md-8">
                             <div>
-                                <video src=""></video>
+                                <img src="./public/images/main/main(1082x1191).jpg" alt="">
                             </div>
                         </div>
 
@@ -569,22 +585,22 @@
                 </div>
             </div>
 
-            <div>
+            <div class="outline guide center">
                 <h2>가장 적합한 노트북 선택</h2>
                 <p> </p>
                 <p>초경량 일상 작업용 노트북이나 멀티태스킹 성능이 우수한 대화면 노트북을 찾고 계신가요? 적합한 노트북을 쉽게 결정할 수 있도록 주요 기능을 자세히 확인해 보세요.</p>
             </div>
 
-            <div>
+            <div id="suit-laptop-image-wrap" class="outline center">
                 <div id="suit-laptop-image"></div>
             </div>
 
             <!-- 적합 노트북 설명 부분 -->
-            <div>
+            <div id="fit-laptop-info" class="outline center">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6">
-                            <div>
+                            <div class="fit-laptop-content">
                                 <h3>Surface Laptop Go</h3>
                                 <ul>
                                     <li>역대 최경량 Surface Laptop, 12.4인치 PixelSense™ 1536 x 1024(148PPI) 디스플레이, 대화형 터치 스크린</li>
@@ -594,7 +610,7 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div>
+                            <div class="fit-laptop-content">
                                 <h3>Surface Laptop 3 13.5인치 및 15인치</h3>
                                 <ul>
                                     <li>대형 13.5인치 PixelSense™ 2256 x 1504(201PPI) 디스플레이 또는 15인치 PixelSense™ 2496 x 1664(201PPI) 디스플레이(각각 대화형 터치 스크린 포함/Surface 펜 지원)<sup>*</sup></li>
@@ -608,7 +624,7 @@
             </div>
 
             <!-- 기술 사양 탭 전환 시 나오는 내용 부분 -->
-            <div>
+            <div id="tech-info" class="tech-spec">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6">
@@ -673,7 +689,7 @@
                 </div>
             </div>
 
-            <div>
+            <div id="tech-spec-info" class="tech-spec center">
                 <div>
                     <h2>기술 사양</h2>
                 </div>
@@ -847,16 +863,16 @@
             </div>
 
             <!-- 제품 액세서리  내용 부분 -->
-            <div>
+            <div id="accessory-info">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4">
-                            <div> 
+                            <div id="accessory-content"> 
                                 <h2>유용한 신제품 Surface용 액세서리</h2>
                                 <div>
                                     <p>차세대 도구와 액세서리를 구매하여 나만의 Surface&nbsp;Laptop&nbsp;Go 환경을 만들어 보세요.</p>
                                 </div>
-                                <a>지금 구입</a>
+                                <a href="#">지금 구입</a>
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -867,29 +883,18 @@
                     </div>
                 </div>
 
-                <div>
-                    <div>
-                        <ul>
-                            <li>
-                                <a href="#"><img src="./public/images/main/business.jpg" alt="비즈니스"><span>비즈니스용 Surface</span></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="./public/images/main/accessory.jpg" alt="액세서리"><span>액세서리</span></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="./public/images/main/Surface Support.jpg" alt="지원"><span>Surface 지원</span></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="./public/images/main/register Surface.jpg" alt="등록"><span>Surface 등록</span></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="./public/images/main/warning.jpg" alt="경고"><span>전원 코드 리콜</span></a>
-                            </li>
-                        </ul>
+                <div id="accessory-icon">
+                    <div> 
+                        <a href="#"><img src="./public/images/main/business.jpg" alt="비즈니스"><span>비즈니스용 Surface</span></a>
+                        <a href="#"><img src="./public/images/main/accessory.jpg" alt="액세서리"><span>액세서리</span></a>
+                        <a href="#"><img src="./public/images/main/Surface Support.jpg" alt="지원"><span>Surface 지원</span></a>
+                        <a href="#"><img src="./public/images/main/register Surface.jpg" alt="등록"><span>Surface 등록</span></a>
+                        <a href="#"><img src="./public/images/main/warning.jpg" alt="경고"><span>전원 코드 리콜</span></a>
+                            
                     </div>
                 </div>
 
-                <div>
+                <div id="accessory-warning">
                     <ul class="c-list">
                         <li>기능과 앱의 사용 여부는 지역마다 다를 수 있습니다.</li>
                         <li><sup>*</sup> Microsoft 365 및 일부 소프트웨어와 액세서리는 별도로 판매됩니다.</li>
@@ -903,7 +908,7 @@
                 </div>
             </div>
 
-            <div>
+            <div id="sns">
                 <div>
                     <span>Surface 팔로우</span>
                     <ul>
@@ -1096,7 +1101,7 @@
                 </div>
             </div>
 
-            <div class="c-uhff-base">
+            <div class="footer-nav">
                 <a>한국어(대한민국)</a>
 
                 <nav aria-label="Microsoft corporate 링크">
@@ -1127,7 +1132,8 @@
         </footer> 
     </div>
  
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script> 
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://kit.fontawesome.com/e7102622f2.js" crossorigin="anonymous"></script> 
     <script src="./public/lib/bootstrap/js/bootstrap.js"></script>
     <script src="./public/lib/splide/dist/js/splide.min.js"></script>
     <script src="./public/js/main.js"></script>

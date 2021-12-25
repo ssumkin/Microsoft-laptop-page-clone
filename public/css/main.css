@@ -1,12 +1,14 @@
+/* 기본 스타일 수정 */
 * {
     margin: 0;
     padding: 0;
     list-style: none;
     box-sizing: border-box;
 } 
-
-.center {
-    padding: 0 5%; 
+ol, 
+ul {
+    margin: 0;
+    padding: 0;
 }
 
 button {
@@ -14,30 +16,47 @@ button {
     border: none;
 }
 
-.button-after button::after {
-    content: "∨";
+a {
+    text-decoration: none;
+    color:black;
 }
 
+a:hover {
+    color: black;
+}
+
+/* 화면 전체 사이즈 조정 */
 #body-wrap {
     width: 100%;
-    min-width: 300px;
+    min-width: 320px;
+    overflow: hidden; 
 }
 
+.center {
+    padding: 0 5%;  
+    margin:0 auto;
+}
+
+/* 헤더 스타일 */
 #header-wrap {
-    width: 100%;
+    width: 100%; 
+    max-width: 1600px;
     height: 54px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: center; 
+    margin: 0 auto;
+    padding: 0;
+    font-size: 13px; 
 }
 
+/* 메인 로고 스타일 */
 #main-logo {
     display: inline-block;
+    width: 137px; 
 }
 
-#main-logo a {
-    line-height: 54px;
-    padding: 16px 6px 6px 10px;
+#main-logo a { 
+    padding: 16px 6px 16px 10px;
     height: 100%;
 }
 
@@ -45,23 +64,53 @@ button {
      width: 108px;
 }  
 
+/* 서페이스 스타일 */
 #surface {
-    display: inline-block; 
-    vertical-align: middle;
-    position: relative;
+    display: inline-block;  
+    margin-top: 1px;
+    font-size: 18px; 
 } 
 
 #surface::before {
+    content: " ";
     border-left: 2px solid #000;
     height: 24px;
-    content: " ";
-    margin-left: 7px;
-    position: absolute; 
-    left: 0;
+    padding: 0 17px;
+    position: relative; 
+    left: 19px;
 }
 
+#surface a {
+    padding: 16px 8px 16px 12px;
+    font-weight: bold;
+}
+
+#surface button {
+    display: none;
+}
+
+/* 컴퓨터들 ~ 지원 등 서브 메뉴 스타일 */
 #sub-menu {
     display: inline-block;
+    width: 100%; 
+    min-width: 420px;
+    height: 100%;
+    padding-left: 2px;
+    padding-right: 1px;
+}
+
+#sub-menu ul li:nth-child(1) {
+    display: none;
+}
+
+#sub-menu button {
+    padding: 17px 16px 16px 20px;
+    margin-top: 1px;
+}
+
+#sub-menu > ul > li > a {
+    padding: 17px 5px 16px 10px;
+    margin-top: 1px;
 }
 
 #sub-menu ul li div ul {
@@ -72,45 +121,677 @@ button {
     display: inline-block;
 }
 
-#main-menu {
-    display: inline-block;
+.button-after::after {
+    content: "\f078";  
+    font-family: FontAwesome; 
+    position: relative;
+    left: 3px;
 }
 
+/* 마소 전체 ~ 로그인 스타일 */
+#main-menu-wrap {
+    display: flex;
+    min-width: 406px; 
+}
+  
 #main-menu > nav {
     display: none;
 } 
 
+#main-menu { 
+    padding: 17px 16px 16px 20px;
+}
 
+#search-wrap { 
+    font-size: 14px;
+    padding: 17px 16px 16px 20px;
+}
 
+#search-wrap input {
+    display: none;
+}
 
+#search-wrap form button::after {
+    content: "\f002";
+    font-family: FontAwesome;
+    margin-left: 5px;
+}
 
+#search-wrap #cancel-button {
+    display: none;
+}
 
+#cart { 
+    font-size: 14px;
+    padding: 17px 16px 16px 20px;
+}
 
+#cart a::after {
+    content: "\f07a";
+    font-family: FontAwesome;
+    margin-left: 5px;
+}
 
+#sign-in { 
+    font-size: 14px;
+    padding: 17px 16px 16px 20px;
+}
 
+#sign-in a::after {
+    content: "\f234";
+    font-family: FontAwesome;
+    margin-left: 5px;
+}
 
+/* 메인 컨텐츠 스타일 */
+section {
+    margin-top: 6px;
+}
 
-
-
-
+#main-image-wrap {
+    width: 100%;
+    height: 1080px;
+    margin:0 auto;
+}
 
 #main-image {
     width: 100%;
-    height: 1080px;
-    background-image: url(../images/main/main\(1920x1080\).jpg);
+    height: 100%;
+    background-image: url(../images/main/main_1920x1080.jpg);
     background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#main-img-content-wrap {
+    width: 80%;
+    height: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+#main-img-content {
+    position: relative;
+    top: 50%; 
+    transform: translateY(-50%);
+}
+
+#main-img-content strong {
+    background-color: #ffd800;
+}
+
+#main-img-content h2 {
+    font-size: 34px;
+    font-weight: 600;
+}
+
+#main-img-content p {
+    font-size: 24px;
+}
+
+#content-wrap {
+    margin-top:55px;
+    margin-bottom:30px;
+}
+
+#content-wrap div:first-child,
+#content-wrap div:last-child {
+    display: none;
+}
+
+#content {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#content li {
+    display: inline-block;
+    padding: 0 15px 0 15px;
+}
+
+#content li a {
+    padding: 20px 5px 5px 5px;
+}
+.active { 
+    border-bottom: 2px solid #0067b8;
+} 
+
+#splide-wrap {
+    width: 85%;
+    margin:0 auto;
+    margin-top:30px;
+    padding-top:40px;
+    margin-bottom:30px;
+}
+.splide { 
+    width: 100%;
+    height: 451px;  
+    margin-bottom: 10px;
+}
+ 
+.splide__track {
+    width: 100%;
+    height: 451px;
+} 
+
+.slide {
+    width: 100%;
+    text-align: center;
+    padding: 0 95px 50px 95px;
+}
+
+.slide blockquote {
+    font-size: 34px;
+    margin-bottom: 50px;
+}
+
+.slide > div {
+    font-size: 20px;
+    font-weight: 600;
+    opacity: .95;
+    margin-bottom: 28px;
+}
+
+/* 섹션 설명 부분 가운데 정렬  */
+.guide {
+    text-align: center;
+    max-width: 1600px;
+    padding: 70px 0 50px 0;
+}
+
+.guide h2 {
+    font-weight: 600;
+}
+
+#sub-image-wrap {
+    width: 100%;
+    height: 600px;
+    margin:0 auto;
 }
 
 #sub-image {
     width: 100%;
-    height: 600px;
+    height: 100%;
     background-image: url(../images/main/sub\ main.jpg);
     background-repeat: no-repeat;
+    background-position: center; 
+} 
+
+#product-info {
+    margin-bottom: 50px;
 }
 
-#design-iamge {
+#product-info .container {
+    margin-top:50px;
+    max-width: 1600px; 
+}
+
+#product-info .row {
+    justify-content: space-between;
+}
+
+#product-info .col-md-3 { 
+    width: 23%; 
+    max-width: 374px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    padding: 40px 3% 52px; 
+}
+
+#product-info .col-md-3:last-child {
+    margin-right: 0;
+}
+
+#product-info .col-md-3 img { 
+    margin-bottom: 30px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#product-info .col-md-3 h2 { 
+    font-weight: 600;
+}
+
+#product-info #product-info-check {
+    position: relative;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-4.8%);
+}
+
+#product-info #product-info-check a {
+    font-weight: 600;
+    color: #005da6;
+}
+
+#product-info #product-info-check a::after {
+    content: "\f054";
+    font-family: FontAwesome;
+    margin-left: 5px;
+}
+
+/* 디자인 설명 스타일 */
+#design-image-wrap {
+    width: 100%;
+    height: 600px;
+    margin:0 auto;
+}
+
+#design-image {
     width: 100%;
     height: 600px;
     background-image: url(../images/main/laptop\ design.jpg);
     background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#design-info {
+    margin-top:50px;
+}
+
+#design-info .container {
+    max-width: 1600px;
+}
+
+#design-info .row {
+    justify-content: space-between;
+}
+
+.design-content img {
+    width: 100%;
+}
+
+.design-content h3 {
+    margin-top: 35px;
+    font-size: 20px;
+    font-weight: 600;
+}
+ 
+#scroll-image {
+    margin-top:150px;
+}
+
+#spin-container {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    margin:0 auto;
+} 
+
+#spin-container > div:first-child {
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/main/scroll\ image.jpg);
+    background-repeat: no-repeat;
+    background-position: center; 
+}
+
+#spin-wrapper {
+    text-align: center;
+}
+
+#slider {
+    width: 28%;
+    height: 5px;
+    background-color: black;
+    display: inline-block;
+    margin:0 auto;
+}
+
+#benefits-info {
+    margin-top:50px;
+}
+
+#benefits-info .container {
+    max-width: 1600px;
+}
+
+#benefits-info .row {
+    justify-content: space-between;
+}
+
+.benefits-content:hover {
+    cursor: pointer;
+}
+
+.benefits-content img {
+    width: 100%;
+}
+
+.benefits-content h3 {
+    margin-top: 35px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.benefits-content li {
+    list-style: inside;
+    margin:10px 0;
+    font-size: 14px;
+}
+
+.benefits-content > a {
+    margin-top: 10px;
+    color:#0067b8;
+    font-weight: 600; 
+}
+
+.benefits-content > a::after {
+    content: "\f054";
+    font-family: FontAwesome;
+    margin-left: 5px;
+}
+
+#program-info {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+#program-info img{
+    width: 100%;
+}
+ 
+#flipgrid,
+#netflix,
+#adobe-spark {
+    display: none;
+}
+
+#logo-wrap {
+    display: flex;
+    justify-content: center;
+}
+
+#logo-wrap > div {
+    height: 120px;
+    width: 120px; 
+    cursor: pointer;
+}
+ 
+#m_logo {
+    background-image: url(../images/main/minecraft\ logo.jpg); 
+    background-position: 50% 100%;  
+}
+#f_logo {
+    background-image: url(../images/main/flipgrid\ logo.jpg); 
+    background-position: 50% 0%;  
+}
+#n_logo {
+    background-image: url(../images/main/netflix\ logo.jpg); 
+    background-position: 50% 0%;  
+}
+#a_logo {
+    background-image: url(../images/main/adobe\ spark\ logo.jpg); 
+    background-position: 50% 0%;  
+}
+
+#video-info li button {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#video-info li button::after {
+    content: "\f054";
+    font-family: FontAwesome;
+    margin-left: 5px;
+}
+
+#video-info li p {
+    display: none;
+}
+
+#video-info li:first-child p {
+    display: block;
+}
+
+#video-info img{
+    width: 100%;
+    height: 400px;
+}
+ 
+#suit-laptop-image-wrap {
+    width: 100%; 
+    height: 600px;
+    margin:0 auto;
+}
+
+#suit-laptop-image {
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/main/subsub.jpg);
+    background-repeat: no-repeat;
+    background-position: center; 
+}  
+
+#fit-laptop-info {
+    margin-top:50px;
+}
+
+#fit-laptop-info .container {
+    max-width: 1600px;
+}
+
+#fit-laptop-info .row {
+    justify-content: space-between;
+} 
+
+.fit-laptop-content h3 { 
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.fit-laptop-content li {
+    list-style: inside;
+    margin:10px 0;
+    font-size: 14px;
+}
+
+/* 기술 사양 탭 */
+#tech-info {
+    margin-top:50px;
+}
+
+#tech-info .container {
+    max-width: 1600px;
+}
+
+#tech-info .row {
+    justify-content: space-between;
+} 
+
+#tech-info img { 
+    width: 100%;
+} 
+
+#tech-info h3 { 
+    margin-top:40px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#tech-info li {
+    list-style: inside;
+    margin:10px 0;
+    font-size: 14px;
+}
+
+#tech-spec-info {
+    max-width: 1600px;
+    padding: 0 5%;
+    margin: 0 auto;
+    box-sizing: content-box;
+    margin-top:50px;
+}
+
+#tech-spec-info h2 { 
+    font-size: 24px;
+    font-weight: 600;
+}
+
+#tech-spec-info table {
+    margin-left: 3em;
+    margin-bottom : 50px;
+}
+
+#tech-spec-info th,
+#tech-spec-info td {
+    padding-top:10px;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+#tech-spec-info th p,
+#tech-spec-info td p {
+    margin-bottom: 10px;
+}
+
+#accessory-info .container {
+    max-width: 1600px;
+}
+
+#accessory-info .row {
+    justify-content: space-between;
+}
+
+#accessory-content {
+    position: relative;
+    top:50%;
+    transform: translateY(-50%); 
+}
+
+#accessory-content h2 {
+    font-size: 34px;
+    font-weight: 600;
+}
+
+#accessory-content a {
+    font-size: 34px;
+    font-weight: 600;
+}
+
+#accessory-content a {
+    font-size:15px;
+    font-weight: 600;
+    color: #005da6;
+}
+
+#accessory-content a::after {
+    content: "\f054";
+    font-family: FontAwesome;
+    margin-left: 5px;
+}
+
+#accessory-icon > div {
+    margin-top:40px;
+    display: flex;
+    justify-content: center;
+}
+
+#accessory-icon > div a {
+    position: relative;
+    margin: 0 10px 0 10px;
+    padding: 0 40px 0 40px; 
+}
+
+#accessory-icon > div a > span {
+    font-size: 15px;
+    width: 135px;
+    text-align: center;
+    position: absolute;
+    top: 100%;
+    left:50%;
+    transform: translateX(-50%);
+}
+
+#accessory-warning {
+    max-width: 1600px;
+    padding: 0 5%;
+    margin: 0 auto;
+    box-sizing: content-box;
+    margin-top:50px;
+}
+
+#accessory-warning li {
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+#sns > div:first-child {
+    max-width: 1600px;
+    padding: 0 5%;
+    margin: 0 auto;
+    box-sizing: content-box;
+    margin-top:50px;
+}
+
+#sns > div:first-child {
+    display: flex;
+} 
+
+#sns > div:first-child li { 
+    float: left;
+    margin:0 10px;
+}
+
+#sns > div:last-child {
+    max-width: 1600px;
+    padding: 0 5%;
+    margin: 0 auto;
+    box-sizing: content-box;
+    margin-top:50px;
+}
+ 
+#sns > div:last-child {
+    display: flex;
+} 
+
+#sns > div:last-child li { 
+    float: left;
+    margin:0 10px;
+}
+
+#sns {
+    margin-bottom:60px;
+}
+
+/* 푸터 스타일 */
+footer {
+    width: 100%;
+    background-color:#f2f2f2;
+}
+
+footer .container {
+    max-width: 1600px;
+}
+
+footer .row {
+    justify-content: space-between;
+}
+
+footer .col-sm-4 div {
+    font-size:15px;
+    font-weight: 600; 
+    padding-top:20px;
+}
+
+footer .col-sm-4 ul li {
+    font-size:11px;
+    margin:10px 0;
+
+}
+
+.footer-nav > a {
+    float: left;
+}
+
+.footer-nav > nav {
+    display: flex;
+    position: relative;
+    right: 0;
+}
+
+.footer-nav > nav li {
+    float: left;
 }
