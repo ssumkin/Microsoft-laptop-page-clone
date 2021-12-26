@@ -188,6 +188,7 @@ section {
     margin-top: 6px;
 }
 
+/* 메인 이미지 스타일 */
 #main-image-wrap {
     width: 100%;
     height: 1080px;
@@ -203,6 +204,7 @@ section {
     background-size: cover;
 }
 
+/* 메인 이미지 설명 부분 */
 #main-img-content-wrap {
     width: 80%;
     height: 100%;
@@ -229,6 +231,7 @@ section {
     font-size: 24px;
 }
 
+/* 개요 기술사양 탭 부분 */
 #content-wrap {
     margin-top:55px;
     margin-bottom:30px;
@@ -254,10 +257,12 @@ section {
 #content li a {
     padding: 20px 5px 5px 5px;
 }
+
 .active { 
     border-bottom: 2px solid #0067b8;
 } 
 
+/* 개요 탭의 제품 정보 슬라이드 */
 #splide-wrap {
     width: 85%;
     margin:0 auto;
@@ -305,6 +310,7 @@ section {
     font-weight: 600;
 }
 
+/* 두 번째 이미지 부분 */
 #sub-image-wrap {
     width: 100%;
     height: 600px;
@@ -319,6 +325,7 @@ section {
     background-position: center; 
 } 
 
+/* 제품 소개 부분 */
 #product-info {
     margin-bottom: 50px;
 }
@@ -409,7 +416,8 @@ section {
     font-size: 20px;
     font-weight: 600;
 }
- 
+
+/* 가로 스크롤 하며 이미지 확인하는 부분 (가로 스크롤은 안됨) */
 #scroll-image {
     margin-top:150px;
 }
@@ -441,6 +449,7 @@ section {
     margin:0 auto;
 }
 
+/* 혜택 안내 부분 */
 #benefits-info {
     margin-top:50px;
 }
@@ -485,6 +494,7 @@ section {
     margin-left: 5px;
 }
 
+/* 마크~어보드 스파크 프로그램 안내 부분 */
 #program-info {
     display: inline-block;
     margin: 0 auto;
@@ -528,6 +538,7 @@ section {
     background-position: 50% 0%;  
 }
 
+/* 영상 시청 부분 */
 #video-info li button {
     font-size: 20px;
     font-weight: 600;
@@ -618,6 +629,7 @@ section {
     font-size: 14px;
 }
 
+/* 기술 사양 상세 설명 부분 */
 #tech-spec-info {
     max-width: 1600px;
     padding: 0 5%;
@@ -647,6 +659,7 @@ section {
     margin-bottom: 10px;
 }
 
+/* 노트북 관련 액세서리 부분 */
 #accessory-info .container {
     max-width: 1600px;
 }
@@ -705,6 +718,7 @@ section {
     transform: translateX(-50%);
 }
 
+/* 마지막 상세 설명 */
 #accessory-warning {
     max-width: 1600px;
     padding: 0 5%;
@@ -718,6 +732,7 @@ section {
     font-size: 14px;
 }
 
+/* surface 팔로우 부분 */
 #sns > div:first-child {
     max-width: 1600px;
     padding: 0 5%;
@@ -735,6 +750,7 @@ section {
     margin:0 10px;
 }
 
+/* 페이지 공유 부분 */
 #sns > div:last-child {
     max-width: 1600px;
     padding: 0 5%;
@@ -759,7 +775,7 @@ section {
 /* 푸터 스타일 */
 footer {
     width: 100%;
-    background-color:#f2f2f2;
+background-color:#f2f2f2;
 }
 
 footer .container {
