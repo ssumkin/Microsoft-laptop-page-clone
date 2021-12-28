@@ -811,3 +811,35 @@ footer .col-sm-4 ul li {
 .footer-nav > nav li {
     float: left;
 }
+
+
+
+@media screen and (min-width:540px) and (max-width:766px) { 
+
+    #product-info .col-md-3 {
+        width: 45%;  
+        max-width: 374px; 
+        padding: 40px 4.5% 52px; 
+        margin: 45px 2.5% 0;
+    }
+    
+    #product-info .col-md-3:nth-child(even) {
+        margin-right: 0;
+    }   
+      
+}
+     
+
+@media screen and (max-width:539px) { 
+
+    #product-info .col-md-3 {
+        padding: 18px 8.4% 52px;
+        width: 100%;
+        max-width: 450px;
+        margin-top: 10px;
+        margin-left: auto;
+        margin-right: auto;
+    } 
+      
+}
+     
