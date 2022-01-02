@@ -25,6 +25,15 @@ a:hover {
     color: black;
 }
 
+.active { 
+    display: block !important;
+} 
+
+.inactive {
+    display: none !important;
+}
+
+
 /* 화면 전체 사이즈 조정 */
 #body-wrap {
     width: 100%;
@@ -44,7 +53,7 @@ a:hover {
     height: 54px;
     display: flex;
     align-items: center; 
-    margin: 0 auto;
+    margin: 0 auto; 
     padding: 0;
     font-size: 13px; 
 }
@@ -93,13 +102,13 @@ a:hover {
 #sub-menu {
     display: inline-block;
     width: 100%; 
-    min-width: 420px;
+    min-width: 480px;
     height: 100%;
     padding-left: 2px;
     padding-right: 1px;
 }
 
-#sub-menu ul li:nth-child(1) {
+#sub-menu > ul > li:nth-child(1) {
     display: none;
 }
 
@@ -113,10 +122,6 @@ a:hover {
     margin-top: 1px;
 }
 
-#sub-menu ul li div ul {
-    display: none;
-}
-
 #sub-menu > ul > li {
     display: inline-block;
 }
@@ -128,15 +133,117 @@ a:hover {
     left: 3px;
 }
 
+#sub-menu2,
+#sub-menu3,
+#sub-menu4 {
+    position: relative;
+}
+
+#sub-menu2 > div,
+#sub-menu3 > div,
+#sub-menu4 > div {
+    display: none;
+    position: absolute;
+    top:57px;
+    left: 0;
+    background-color: #f2f2f2;
+    border: 1px solid #e6e6e6;
+    border-bottom: 2px solid black;
+    z-index: 1;
+} 
+
+#sub-menu3 > div > div  {
+    background-color: #e6e6e6;
+}
+
+#sub-menu3 > div > div > a  {
+    display: inline-block;   
+    padding: 12px 0 12px 0;
+    position: relative; 
+    left: 50%; 
+    transform: translateX(-50%); 
+}
+
+#sub-menu3 > div > div > a::after  {
+    content: "\f054";
+    font-family: FontAwesome;
+    margin-left: 5px;
+}
+
+#sub-menu2 > div button,
+#sub-menu3 > div button,
+#sub-menu4 > div button { 
+    font-weight: 600;
+}
+
+#sub-menu2 > div > ul,
+#sub-menu3 > div > ul  { 
+    display: flex;
+}
+
+#sub-menu2 > div > ul > li,
+#sub-menu3 > div > ul > li { 
+    width: 195px; 
+}
+
+#sub-menu4 > div > ul > li {
+    width: 254px;
+}
+  
+#sub-menu2 a,
+#sub-menu3 a { 
+    padding: 12px 0 12px 24px;
+    display: block;
+}
+
+#sub-menu4 a { 
+    padding: 18px 0 18px 24px;
+    display: block;
+}
+
+#sub-menu2 a:hover,
+#sub-menu3 a:hover,
+#sub-menu4 a:hover {  
+    text-decoration: underline;
+}
+
 /* 마소 전체 ~ 로그인 스타일 */
 #main-menu-wrap {
     display: flex;
     min-width: 406px; 
+    position: relative;
 }
   
+/* 메인 메뉴 현재 버전에서 작동 안함 */
 #main-menu > nav {
     display: none;
+    position: absolute;
+    top:57px;
+    left: -50%;
 } 
+
+#main-menu > nav > ul {
+    display: flex;
+    float: left;
+}
+
+#main-menu > nav > ul > li:first-child, 
+#main-menu > nav > ul > li:last-child {
+    width: 100%;
+}
+
+#main-menu > nav > ul > li:first-child > ul > li{
+    float: left;
+}
+
+#main-menu > nav > ul > li:nth-child(2),
+#main-menu > nav > ul > li:nth-child(3),
+#main-menu > nav > ul > li:nth-child(4),
+#main-menu > nav > ul > li:nth-child(5),
+#main-menu > nav > ul > li:nth-child(6),
+#main-menu > nav > ul > li:nth-child(7) {
+    width: 195px;
+}
 
 #main-menu { 
     padding: 17px 16px 16px 20px;
@@ -193,6 +300,7 @@ section {
     width: 100%;
     height: 1080px;
     margin:0 auto;
+    position: relative;
 }
 
 #main-image {
@@ -258,10 +366,6 @@ section {
     padding: 20px 5px 5px 5px;
 }
 
-.active { 
-    border-bottom: 2px solid #0067b8;
-} 
-
 /* 개요 탭의 제품 정보 슬라이드 */
 #splide-wrap {
     width: 85%;
@@ -299,31 +403,25 @@ section {
     margin-bottom: 28px;
 }
 
+.splide__pagination__page {
+    border: 1px solid black;
+    background-color: white;
+}
+.splide__pagination__page.is-active {
+    background-color: black;
+}
+
 /* 섹션 설명 부분 가운데 정렬  */
 .guide {
     text-align: center;
     max-width: 1600px;
-    padding: 70px 0 50px 0;
+    padding: 70px 5% 50px 5%;
 }
 
 .guide h2 {
     font-weight: 600;
 }
-
-/* 두 번째 이미지 부분 */
-#sub-image-wrap {
-    width: 100%;
-    height: 600px;
-    margin:0 auto;
-}
-
-#sub-image {
-    width: 100%;
-    height: 100%;
-    background-image: url(../images/main/sub\ main.jpg);
-    background-repeat: no-repeat;
-    background-position: center; 
-} 
+ 
 
 /* 제품 소개 부분 */
 #product-info {
@@ -345,11 +443,7 @@ section {
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
     padding: 40px 3% 52px; 
 }
-
-#product-info .col-md-3:last-child {
-    margin-right: 0;
-}
-
+ 
 #product-info .col-md-3 img { 
     margin-bottom: 30px;
     position: relative;
@@ -362,10 +456,11 @@ section {
 }
 
 #product-info #product-info-check {
+    display: inline-block;
     position: relative;
     top: 50px;
     left: 50%;
-    transform: translateX(-4.8%);
+    transform: translateX(-50%);
 }
 
 #product-info #product-info-check a {
@@ -378,22 +473,7 @@ section {
     font-family: FontAwesome;
     margin-left: 5px;
 }
-
-/* 디자인 설명 스타일 */
-#design-image-wrap {
-    width: 100%;
-    height: 600px;
-    margin:0 auto;
-}
-
-#design-image {
-    width: 100%;
-    height: 600px;
-    background-image: url(../images/main/laptop\ design.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
+ 
 
 #design-info {
     margin-top:50px;
@@ -521,19 +601,19 @@ section {
     cursor: pointer;
 }
  
-#m_logo {
+#m-logo {
     background-image: url(../images/main/minecraft\ logo.jpg); 
     background-position: 50% 100%;  
 }
-#f_logo {
+#f-logo {
     background-image: url(../images/main/flipgrid\ logo.jpg); 
     background-position: 50% 0%;  
 }
-#n_logo {
+#n-logo {
     background-image: url(../images/main/netflix\ logo.jpg); 
     background-position: 50% 0%;  
 }
-#a_logo {
+#a-logo {
     background-image: url(../images/main/adobe\ spark\ logo.jpg); 
     background-position: 50% 0%;  
 }
@@ -563,19 +643,6 @@ section {
     height: 400px;
 }
  
-#suit-laptop-image-wrap {
-    width: 100%; 
-    height: 600px;
-    margin:0 auto;
-}
-
-#suit-laptop-image {
-    width: 100%;
-    height: 100%;
-    background-image: url(../images/main/subsub.jpg);
-    background-repeat: no-repeat;
-    background-position: center; 
-}  
 
 #fit-laptop-info {
     margin-top:50px;
@@ -660,6 +727,10 @@ section {
 }
 
 /* 노트북 관련 액세서리 부분 */
+#accessory-info {
+    margin-top: 50px;
+}
+
 #accessory-info .container {
     max-width: 1600px;
 }
@@ -706,7 +777,14 @@ section {
     position: relative;
     margin: 0 10px 0 10px;
     padding: 0 40px 0 40px; 
+    font-weight: 600;
+    color:#005da6;
 }
+
+#accessory-icon > div a:hover span { 
+    text-decoration: underline;
+}   
+
 
 #accessory-icon > div a > span {
     font-size: 15px;
@@ -811,25 +889,151 @@ footer .col-sm-4 ul li {
 .footer-nav > nav li {
     float: left;
 }
+ 
+@media screen and (max-width:1774px) {
+    #header-wrap {
+        padding: 0 5%;
+    }
+}
 
-
-
-@media screen and (min-width:540px) and (max-width:766px) { 
-
+@media screen and (min-width:540px) and (max-width:1279px) {
+  
     #product-info .col-md-3 {
         width: 45%;  
         max-width: 374px; 
         padding: 40px 4.5% 52px; 
         margin: 45px 2.5% 0;
     }
+
+    #product-info .row {
+        justify-content: center;
+    }
     
     #product-info .col-md-3:nth-child(even) {
         margin-right: 0;
-    }   
-      
+    }  
+    #product-info .col-md-3:nth-child(odd) {
+        margin-left: 0;
+    } 
 }
-     
 
+@media screen and (max-width:1080px) {
+    .center {
+        padding: 0 2% !important;
+    }
+
+    #product-info-check {
+        margin-bottom:30px;
+    }
+
+    #sub-image-wrap {
+        padding:0 !important;
+    }
+
+    #tech-info .container > .row > .col-md-6 {
+        width: 100%;
+    }
+
+    #tech-spec-info table {
+        margin-left: 0;
+    }
+
+    #accessory-content h2 {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width:764px) {
+    .design-content h3 {
+        margin-top: 10px; 
+        font-size: 18px;
+    }
+
+    .design-content p {
+        margin-bottom: 2rem; 
+    }  
+
+    .benefits-content {
+        margin-bottom:50px;
+    }
+
+    .benefits-content h3 {
+        margin-top: 10px;
+        font-size:18px;
+    }
+
+    .benefits-content > a {
+        font-size: 14px; 
+    } 
+    .guide {
+        margin-top:20px;
+        } 
+
+    .guide h2,
+    .guide p  {
+        padding-right: var(--bs-gutter-x, 2rem);
+        padding-left: var(--bs-gutter-x, 2rem);
+    }
+
+    #accessory-content {
+        text-align: center;
+    }
+
+    #accessory-icon > div {
+        flex-direction: column;
+    }
+    
+    #accessory-icon > div a {
+        padding: 0 40px 10px 10px;
+    }
+
+    #accessory-icon > div a > span { 
+        position: relative;
+        left: 10px;
+    }
+
+    #main-image-wrap {
+        padding-bottom: 130px;
+    }
+
+    #main-img-content {
+        text-align: center;
+        position: relative;
+        top: 108%;
+    }
+
+    #main-img-content strong { 
+        font-size: 14px;
+    }
+
+    #main-img-content h2 { 
+        font-size: 18px;
+    }
+
+    #main-img-content p {
+        font-size: 17px; 
+    }
+
+    #splide-wrap {
+        width: 100%;
+    }
+
+    .slide blockquote {
+        font-size: 18px; 
+        margin-bottom: 20px;
+    }
+
+    .slide > div {
+        font-size: 13px;
+        margin-bottom: 0;
+    }
+
+    .splide {
+        height: 235px;
+    }
+ 
+}
+   
 @media screen and (max-width:539px) { 
 
     #product-info .col-md-3 {
@@ -840,6 +1044,29 @@ footer .col-sm-4 ul li {
         margin-left: auto;
         margin-right: auto;
     } 
+
+    #tech-info h3{
+        margin-top: 10px;
+    }
+
+    #tech-info .container > .row > .col-md-6 > .row > div {
+        margin-bottom:40px;
+    }
       
+    #tech-spec-info {
+        padding: 0 2%;
+    }
+
+    #tech-spec-info table tr {
+        display: flex;
+        flex-direction: column;
+    }
+    #tech-spec-info table th {
+        border-bottom: 0;
+    }
+
+    #main-img-content { 
+        top: 110%;
+    }
 }
      
