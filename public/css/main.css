@@ -215,11 +215,11 @@ a:hover {
 }
   
 /* 메인 메뉴 현재 버전에서 작동 안함 */
-#main-menu > nav {
-    display: none;
+#main-menu > nav { 
     position: absolute;
     top:57px;
     left: -50%;
+    z-index: 1;
 } 
 
 #main-menu > nav > ul {
@@ -881,12 +881,17 @@ footer .col-sm-4 ul li {
 
 }
 
+.footer-nav {
+    max-width : 1600px;
+}
+
 .footer-nav > a {
     float: left;
 }
 
 .footer-nav > nav {
     display: flex;
+    float: right;
     position: relative;
     right: 0;
 }
@@ -894,6 +899,10 @@ footer .col-sm-4 ul li {
 .footer-nav > nav li {
     float: left;
 }
+
+
+
+
  
 @media screen and (max-width:1774px) {
     #header-wrap {
