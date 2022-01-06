@@ -216,10 +216,11 @@ a:hover {
   
 /* 메인 메뉴 현재 버전에서 작동 안함 */
 #main-menu > nav {
-    display: none;
+    /* display: none; */
     position: absolute;
     top:57px;
     left: -50%;
+    z-index: 1;
 } 
 
 #main-menu > nav > ul {
@@ -881,6 +882,11 @@ footer .col-sm-4 ul li {
 
 }
 
+.footer-nav {
+    margin: 0 auto;
+    max-width: 1600px; 
+}
+
 .footer-nav > a {
     float: left;
 }
@@ -888,7 +894,7 @@ footer .col-sm-4 ul li {
 .footer-nav > nav {
     display: flex;
     position: relative;
-    right: 0;
+    right: 0; 
 }
 
 .footer-nav > nav li {
