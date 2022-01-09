@@ -25,6 +25,48 @@ a:hover {
     color: black;
 }
 
+.content-design {
+    position: fixed;
+    top:0;
+    width: 100%;
+    height: 90px;
+    background-color: white;
+    z-index: 5;
+    margin:0 !important;
+    padding: 0 5% 0 5%; 
+}
+
+.content-design h2{ 
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.content-design div:first-child, 
+.content-design div:last-child {
+    display: inline-block !important; 
+}
+
+.content-design div:nth-child(2) {
+    flex-grow: 2;
+    text-align: center;
+}
+
+.content-design div:last-child {
+    position: relative;
+    right: 0;
+}
+
+.content-design a {
+    display: block !important;
+    width: 120px;
+    height: 40px;
+    font-size: 17px;
+    color: white;
+    background-color: #005da6;
+    text-align: center;
+    line-height: 40px;  
+}
+
 .active { 
     display: block !important;
 } 
@@ -37,8 +79,7 @@ a:hover {
 /* 화면 전체 사이즈 조정 */
 #body-wrap {
     width: 100%;
-    min-width: 320px;
-    overflow: hidden; 
+    min-width: 320px; 
 }
 
 .center {
@@ -55,7 +96,7 @@ a:hover {
     align-items: center; 
     margin: 0 auto; 
     padding: 0;
-    font-size: 13px; 
+    font-size: 13px;  
 }
 
 /* 메인 로고 스타일 */
@@ -106,6 +147,15 @@ a:hover {
     height: 100%;
     padding-left: 2px;
     padding-right: 1px;
+    z-index: 2;
+}
+
+#sub-menu > ul > li > div > button:hover { 
+    text-decoration: underline; 
+}
+
+#sub-menu > ul > button:hover { 
+    text-decoration: underline; 
 }
 
 #sub-menu > ul > li:nth-child(1) {
@@ -205,32 +255,46 @@ a:hover {
 #sub-menu3 a:hover,
 #sub-menu4 a:hover {  
     text-decoration: underline;
-}
+}  
 
 /* 마소 전체 ~ 로그인 스타일 */
 #main-menu-wrap {
     display: flex;
     min-width: 406px; 
-    position: relative;
+    position: relative; 
 }
-  
-/* 메인 메뉴 현재 버전에서 작동 안함 */
+   
 #main-menu > nav {
-    /* display: none; */
+    display: none;
+    max-width: 1230px;
+    background-color: #f2f2f2;
     position: absolute;
-    top:57px;
-    left: -50%;
+    top: 53px;
+    left: -910px;
     z-index: 1;
+    border: 1px solid #e6e6e6;
+    border-bottom: 0;
 } 
 
 #main-menu > nav > ul {
     display: flex;
     float: left;
-}
+    flex-wrap: wrap;
+}  
 
 #main-menu > nav > ul > li:first-child, 
 #main-menu > nav > ul > li:last-child {
     width: 100%;
+}
+
+#main-menu > nav > ul > li:first-child {
+    border-bottom: 2px solid #d3d3d3;
+}
+
+#main-menu > nav > ul > li:last-child {
+    text-align: center;
+    background-color: #e6e6e6;
+    border-bottom: 2px solid black;
 }
 
 #main-menu > nav > ul > li:first-child > ul > li{
@@ -244,6 +308,27 @@ a:hover {
 #main-menu > nav > ul > li:nth-child(6),
 #main-menu > nav > ul > li:nth-child(7) {
     width: 195px;
+    padding-bottom: 10px;
+}
+
+#main-menu > nav > ul > li button {
+    padding: 12px 0 12px 24px;
+    display: block;
+    font-weight: 600;
+}
+
+#main-menu > nav > ul > li a {
+    padding: 12px 0 12px 24px;
+    display: block;
+}
+
+#main-menu > nav > ul > li a:hover {
+    text-decoration: underline;
+}
+
+#main-menu > nav > ul > li:nth-child(1) a {
+    padding: 12px 24px 12px 24px;
+    display: block;
 }
 
 #main-menu { 
@@ -261,8 +346,7 @@ a:hover {
 
 #search-wrap form button::after {
     content: "\f002";
-    font-family: FontAwesome;
-    margin-left: 5px;
+    font-family: FontAwesome; 
 }
 
 #search-wrap #cancel-button {
@@ -276,8 +360,7 @@ a:hover {
 
 #cart a::after {
     content: "\f07a";
-    font-family: FontAwesome;
-    margin-left: 5px;
+    font-family: FontAwesome; 
 }
 
 #sign-in { 
@@ -287,8 +370,7 @@ a:hover {
 
 #sign-in a::after {
     content: "\f234";
-    font-family: FontAwesome;
-    margin-left: 5px;
+    font-family: FontAwesome; 
 }
 
 /* 메인 컨텐츠 스타일 */
@@ -344,6 +426,8 @@ section {
 #content-wrap {
     margin-top:55px;
     margin-bottom:30px;
+    display: flex; 
+    align-items: center; 
 }
 
 #content-wrap div:first-child,
@@ -351,11 +435,14 @@ section {
     display: none;
 }
 
+#content-wrap div:nth-child(2) {
+    flex-grow: 2;
+    text-align: center;
+}
+
 #content {
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-size: 16px; 
+    
 }
 
 #content li {
@@ -628,6 +715,7 @@ section {
 #video-info li button {
     font-size: 20px;
     font-weight: 600;
+    text-align: left;
 }
 
 #video-info li button::after {
@@ -636,8 +724,13 @@ section {
     margin-left: 5px;
 }
 
+#video-info-content > ul > li {
+    padding: 12px 0 12px 0;
+}
+
 #video-info li p {
     display: none;
+    padding-top:10px;
 }
 
 #video-info li:first-child p {
@@ -646,7 +739,8 @@ section {
 
 #video-info img{
     width: 100%;
-    height: 400px;
+    height: 500px;
+    object-fit: cover;
 }
  
 
@@ -907,6 +1001,24 @@ footer .col-sm-4 ul li {
     }
 }
 
+@media screen and (max-width:1400px) {
+    #main-menu-wrap {
+        justify-content: flex-end
+    }
+
+    #search-wrap form span {
+        display: none;
+    }
+
+    #cart span {
+        display: none;
+    }
+
+    #sign-in span {
+        display: none;
+    }
+}
+
 @media screen and (min-width:540px) and (max-width:1279px) {
   
     #product-info .col-md-3 {
@@ -916,6 +1028,10 @@ footer .col-sm-4 ul li {
         margin: 45px 2.5% 0;
     }
 
+    #video-info {
+        margin-bottom:50px;
+    }
+    
     #product-info .row {
         justify-content: center;
     }
@@ -932,6 +1048,10 @@ footer .col-sm-4 ul li {
     .center {
         padding: 0 2% !important;
     }
+ 
+    #main-image-wrap {
+        height: 900px;
+    }
 
     #product-info-check {
         margin-bottom:30px;
@@ -939,6 +1059,14 @@ footer .col-sm-4 ul li {
 
     #sub-image-wrap {
         padding:0 !important;
+    }
+
+    #scroll-image {
+        margin-top: 100px;
+    }
+    
+    #spin-container {
+        height: 350px;
     }
 
     #tech-info .container > .row > .col-md-6 {
@@ -952,6 +1080,305 @@ footer .col-sm-4 ul li {
     #accessory-content h2 {
         font-size: 20px;
     }
+
+    #video-info .col-md-4 {
+        order:2;
+        width: 80%;
+        margin:0 auto;
+    }
+
+    #video-info .col-md-8 {
+        order:1;
+        width: 100%;
+        
+    }
+
+    #video-info .container {
+        padding:0;
+        max-width: 1080px;
+    }
+}
+
+@media screen and (max-width:859px) {
+    #header-wrap {
+        display: block;
+        height: 49px;
+        border-bottom: 1px solid #e6e6e6;
+        margin-bottom:34px;
+        padding:0 !important;
+    }
+    
+    #main-logo {
+        position: relative;
+        top:10px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+    }
+
+    #surface {
+        position: absolute;
+        top: 52px;
+        left: 15px;
+        font-size: 15px;
+    }
+
+    #surface::before {
+        display: none;
+    }
+
+    #surface::after {
+        content: "\f078";
+        font-family: FontAwesome;
+        position: relative;
+        left: 3px;
+    }
+
+    #surface button {
+        display: inline-block;
+        font-weight: 600;
+    }
+
+    #surface a {
+        display: none;
+    }
+
+    #main-menu-wrap {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        justify-self: flex-start;
+    }
+    
+    #main-menu-wrap div:nth-child(1),
+    #main-menu-wrap div:nth-child(3),
+    #main-menu-wrap div:nth-child(4) { 
+        padding: 11px 0 0 0;
+        flex-grow: 1;
+    }
+
+    #main-menu-wrap div:nth-child(2) { 
+        padding: 11px 0 0 0;
+        flex-grow: 20;
+    } 
+
+    #main-menu {
+        margin-left: 10px;
+        z-index: 3;
+    }
+
+    #main-menu::after {
+        content: "\f0c9";
+        font-size: 20px;
+        font-family: FontAwesome;
+        position: relative;
+        left: 3px;
+        cursor: pointer;
+    } 
+
+    #main-menu > nav {
+        position: absolute;
+        top: 83px;
+        left: 0;
+        width: 100%;
+    }
+
+    #main-menu > nav > ul {
+        width: 100%;
+        display: block;
+    }
+
+    #main-menu > nav > ul > li {
+        width: 100% !important;
+        display: block;
+        border-bottom: 1px solid #d2d2d2;
+        padding:0 !important;
+    }
+
+    #main-menu > nav > ul > li a:hover {
+        text-decoration: none;
+    }
+
+    #main-menu > nav > ul > li button {
+        font-weight: 400;
+    }
+
+    #main-menu > nav > ul > li button::after {
+        content: "\f078";
+        font-family: FontAwesome;
+        position: absolute;
+        left: 95%;
+    }
+
+    #main-menu > nav > ul > li:first-child > ul > li {
+        display: block;
+        float: inherit;
+        border-bottom: 1px solid #d2d2d2;
+    }
+
+    #main-menu > nav > ul > li > ul {
+        display: none;
+        margin-left: 30px;
+    }
+
+    #main-menu > nav > ul > li:first-child > ul { 
+        margin-left: 0;
+    }
+
+    #main-menu > nav > ul > li > ul > li {
+        border-bottom: 1px solid #d2d2d2;
+    }
+
+    #main-menu > nav > ul > li:first-child > ul {
+        display: block;
+    }
+
+    #main-menu > nav > ul > li:last-child {
+        text-align: left;
+        background-color: #f2f2f2;
+    }
+
+    #search-wrap form button::after {
+        font-size: 20px;
+    }
+
+    #main-menu > span,
+    #main-menu > button {
+        display: none;
+    }
+
+    #cart a::after {
+        font-size: 20px;
+    } 
+    
+    #sign-in a::after {
+        font-size: 20px;
+    } 
+
+    #sub-menu {
+        position: absolute;
+        display: none;
+        top:83px;
+        left: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    #sub-menu > ul {
+        background-color: #f2f2f2;
+    }
+
+    #sub-menu > ul > li {
+        display: block;
+        border-bottom: 1px solid #d2d2d2;
+    }
+
+    #sub-menu > ul > li:last-child {
+        display: block;
+        border-bottom: 2px solid black;
+    }
+
+    #sub-menu > ul > li:nth-child(1) {
+        display: block;
+    }
+    
+    #sub-menu button {
+        width: 100%;
+        text-align: left;
+    }
+
+    .button-after::after { 
+        position: absolute;
+        left: 95%; 
+    } 
+
+    #sub-menu > ul > li > div > button:hover,
+    #sub-menu2 a:hover,
+    #sub-menu3 a:hover,
+    #sub-menu4 a:hover { 
+        text-decoration: none; 
+    }  
+    
+    #sub-menu button,
+    #sub-menu > ul > li > a {
+        margin: 0;
+        padding: 12px 8px 13px 15px; 
+        display: block; 
+    }   
+
+    #sub-menu2 > div button,
+    #sub-menu3 > div button,
+    #sub-menu4 > div button { 
+        font-weight: 400;
+    }
+   
+    #sub-menu2 > div,
+    #sub-menu3 > div,
+    #sub-menu4 > div { 
+        position: static;
+        border: 0;
+        margin-left: 30px;
+    }
+
+    #sub-menu2 > div > ul,
+    #sub-menu3 > div > ul,
+    #sub-menu4 > div > ul {
+        display: block;
+    }
+
+    #sub-menu2 > div > ul > li,
+    #sub-menu3 > div > ul > li,
+    #sub-menu4 > div > ul > li {
+        width: 100%; 
+        border-bottom: 1px solid #d2d2d2;
+    } 
+
+    #sub-menu2 > div > ul > li > ul,
+    #sub-menu3 > div > ul > li > ul, 
+    #sub-menu4 > div > ul > li > ul {
+        width: 100%; 
+        display: none;
+        margin: 1px 0 0 30px;
+    }
+
+    #sub-menu3 > div > div {
+        background-color: #f2f2f2;
+    }
+    
+    #sub-menu3 > div > div > a {
+        padding: 12px 8px 13px 15px;
+        display: block;
+    }
+
+    #sub-menu3 > div > div > a::after {
+        display: none;
+    } 
+
+    #sub-menu2 > div > ul > li > ul > li,
+    #sub-menu3 > div > ul > li > ul > li, 
+    #sub-menu4 > div > ul > li > ul > li { 
+        border-bottom: 1px solid #d2d2d2;
+    }
+  
+    #sub-menu2 button,
+    #sub-menu3 button,
+    #sub-menu4 button  {
+        border-bottom: 1px solid #d2d2d2;
+    } 
+
+    #sub-menu2 button::after,
+    #sub-menu3 button::after,
+    #sub-menu4 button::after  {
+        content: "\f078";
+        font-family: FontAwesome;
+        position: absolute;
+        left: 95%;
+    }
+
+    #spin-container {
+        height: 250px;
+    }
+     
 }
 
 @media screen and (max-width:764px) {
@@ -1005,6 +1432,7 @@ footer .col-sm-4 ul li {
 
     #main-image-wrap {
         padding-bottom: 130px;
+        z-index: 1;
     }
 
     #main-img-content {
@@ -1041,6 +1469,13 @@ footer .col-sm-4 ul li {
 
     .splide {
         height: 315px;
+    }
+
+    #accessory-info .col-md-6:first-child {
+        order:2;
+        width: 70%;
+        margin:0 auto;
+        margin-top:20px;
     }
  
 }
@@ -1079,5 +1514,21 @@ footer .col-sm-4 ul li {
     #main-img-content { 
         top: 110%;
     }
+
+    #video-info .col-md-4 {
+        width: 100%; 
+        margin-left: 10px;
+    }
+
+    #accessory-info .col-md-6:first-child { 
+        width: 100%; 
+    }
+
+    .content-design h2 {
+        font-size: 16px
+    }
+
+    .content-design a {
+        width: 100px;
+    }
 }
-     
