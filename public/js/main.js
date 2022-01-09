@@ -191,15 +191,16 @@ techSpecTap.addEventListener('click', function() {
 })
  
 // 프로그램 로고 클릭 시 프로그램 이미지 변경
-(function logoClickController() {
+function logoClickController() {
     const logoList = document.querySelectorAll('#logo-wrap > div');
-
-    for(let i=0; i<logoList.length; i++) { 
-        logoList[i].addEventListener('click', function() {  
-            programChangeController(i);
+    for(let k=0; k<logoList.length; k++) {  
+        logoList[k].addEventListener('click', function() { 
+            programChangeController(k);
         });
     }
-})();
+}
+
+logoClickController();
 
 // 화면 스크롤 할 경우 개요/기술 사양 메뉴 부분 디자인 바꿔주는 역할
 document.addEventListener('scroll', function() {
