@@ -263,6 +263,10 @@ a:hover {
     min-width: 406px; 
     position: relative; 
 }
+
+#main-menu:hover {
+    cursor: pointer;
+}
    
 #main-menu > nav {
     display: none;
@@ -1001,6 +1005,12 @@ footer .col-sm-4 ul li {
     }
 }
 
+@media screen and (max-width:1500px) {
+    #main-menu > nav {
+        left: -775px;
+    }
+}
+
 @media screen and (max-width:1400px) {
     #main-menu-wrap {
         justify-content: flex-end
@@ -1026,6 +1036,11 @@ footer .col-sm-4 ul li {
         max-width: 374px; 
         padding: 40px 4.5% 52px; 
         margin: 45px 2.5% 0;
+    }
+
+    #main-menu > nav {
+        max-width: 1025px;
+        left: -710px;
     }
 
     #video-info {
@@ -1099,6 +1114,13 @@ footer .col-sm-4 ul li {
     }
 }
 
+@media screen and (max-width:1110px) {
+    #main-menu > nav {
+        max-width: 800px;
+        left: -615px;
+    }
+}
+
 @media screen and (max-width:859px) {
     #header-wrap {
         display: block;
@@ -1165,7 +1187,7 @@ footer .col-sm-4 ul li {
     #main-menu {
         margin-left: 10px;
         z-index: 3;
-    }
+    } 
 
     #main-menu::after {
         content: "\f0c9";
