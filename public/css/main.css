@@ -727,6 +727,10 @@ section {
     margin-left: 5px;
 }
 
+#video-info-content {
+    padding:10px;
+}
+
 #video-info-content > ul > li {
     padding: 12px 0 12px 0;
 }
@@ -879,7 +883,7 @@ section {
 #accessory-icon > div a {
     position: relative;
     margin: 0 10px 0 10px;
-    padding: 0 40px 0 40px; 
+    padding: 0 38px 0 38px; 
     font-weight: 600;
     color:#005da6;
 }
@@ -1029,6 +1033,10 @@ footer .col-sm-4 ul li {
 
     #sign-in span {
         display: none;
+    }
+
+    #video-info .container .row {
+        margin: 0;
     }
 }
 
@@ -1449,7 +1457,7 @@ footer .col-sm-4 ul li {
     }
     
     #accessory-icon > div a {
-        padding: 0 40px 10px 10px;
+        padding: 0 38px 10px 10px;
     }
 
     #accessory-icon > div a > span { 
@@ -1543,8 +1551,7 @@ footer .col-sm-4 ul li {
     }
 
     #video-info .col-md-4 {
-        width: 100%; 
-        margin-left: 10px;
+        width: 100%;  
     }
 
     #accessory-info .col-md-6:first-child { 
