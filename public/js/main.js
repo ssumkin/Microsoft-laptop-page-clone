@@ -11,7 +11,7 @@ function mainMenuOnOff() {
     const mainMenuOptionList = document.querySelectorAll('#main-menu > nav > ul > li > ul');
 
     mainMenu.style.display = 'none'; 
-    
+
     if(screenWidth <= 859) {
         for(let i = 0; i < mainMenuOptionList.length-1; i++) { 
             mainMenuOptionList[i + 1].style.display = 'none';
@@ -29,8 +29,7 @@ function subMenuOnOff() {
     if(screenWidth <= 859) {
         subMenu.style.display = 'none'; 
 
-        for(let i = 0; i < sub2OptionList.length; i++) {
-            console.log(sub2OptionList[i])
+        for(let i = 0; i < sub2OptionList.length; i++) { 
             sub2OptionList[i].style.display = 'none';
         }
         for(let i = 0; i < sub3OptionList.length; i++) { 
@@ -59,10 +58,10 @@ function subMenuDetailChangeController(subMenuOption, subOptionOrder) {
 
     if(subMenuOption === 'sub2') {
         const sub2OptionList = document.querySelector(`#sub-menu2 > div > ul > li:nth-child(${subOptionOrder + 1}) > ul`);   
-        sub2OptionList.style.display = 'block';  
+        sub2OptionList.style.display = ((sub2OptionList.style.display !== 'none') ? 'none' : 'block');  
     } else if(subMenuOption === 'sub3') {
-        const sub3OptionList = document.querySelector(`#sub-menu3 > div > ul > li:nth-child(${subOptionOrder + 1}) > ul`); 
-        sub3OptionList.style.display = 'block';
+        const sub3OptionList = document.querySelector(`#sub-menu3 > div > ul > li:nth-child(${subOptionOrder + 1}) > ul`);  
+        sub3OptionList.style.display = ((sub3OptionList.style.display !== 'none') ? 'none' : 'block'); 
     } 
 }
  
