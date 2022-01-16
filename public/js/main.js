@@ -46,8 +46,8 @@ function subMenuOnOff() {
 // 서브 메뉴 큰 카테고리 컨트롤
 function subMenuChangeController(subMenu, notSub1, notSub2) { 
     notSub1.style.display = 'none';
-    notSub2.style.display = 'none'; 
-    subMenu.style.display = 'block';  
+    notSub2.style.display = 'none';  
+    subMenu.style.display = ((subMenu.style.display !== 'none') ? 'none' : 'block');
 }
 
 // 서브 메뉴 안의 세부 메뉴 버튼 컨트롤
@@ -67,8 +67,9 @@ function subMenuDetailChangeController(subMenuOption, subOptionOrder) {
  
 // 메인 메뉴 세부 옵션 컨트롤
 function mainMenuController(mainMenuOptionOrder) { 
-    const mainMenuOptionList = document.querySelector(`#main-menu > nav > ul > li:nth-child(${mainMenuOptionOrder + 2}) > ul`);
-    mainMenuOptionList.style.display = 'block';
+    const mainMenuOption = document.querySelector(`#main-menu > nav > ul > li:nth-child(${mainMenuOptionOrder + 2}) > ul`);
+    
+    mainMenuOption.style.display = ((mainMenuOption.style.display !== 'none') ? 'none' : 'block');
 }
 
 /**
@@ -171,6 +172,7 @@ function mainMenuController(mainMenuOptionOrder) {
    
 // 개요, 기술 사양 활성화 구역 클래스 추가
 (function startScreenStyle() { 
+    outlineTap.style.borderBottom = '2px blue solid';
     for(let i = 0; i < outline.length; i++) {
         outline[i].classList.add('active');
     } 
@@ -181,7 +183,10 @@ function mainMenuController(mainMenuOptionOrder) {
  
 
 // 개요, 기술 사양 탭 전환 버튼 클릭 부분
-outlineTap.addEventListener('click', function() {
+outlineTap.addEventListener('click', function() {  
+    outlineTap.style.borderBottom = '2px blue solid';
+    techSpecTap.style.border = '0px';
+
     for(let i = 0; i < outline.length; i++) { 
         outline[i].classList.replace('inactive', 'active');
     } 
@@ -190,7 +195,10 @@ outlineTap.addEventListener('click', function() {
     }
 });
 
-techSpecTap.addEventListener('click', function() {
+techSpecTap.addEventListener('click', function() { 
+    techSpecTap.style.borderBottom = '2px blue solid';
+    outlineTap.style.border = '0px';
+
     for(let i = 0; i < techSpec.length; i++) { 
         techSpec[i].classList.replace('inactive', 'active');
     }  

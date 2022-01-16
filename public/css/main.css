@@ -982,6 +982,8 @@ footer .col-sm-4 ul li {
 .footer-nav {
     margin: 0 auto;
     max-width: 1600px; 
+    padding: 20px 0 20px 0;
+    font-size: 13px;
 }
 
 .footer-nav > a {
@@ -990,12 +992,14 @@ footer .col-sm-4 ul li {
 
 .footer-nav > nav {
     display: flex;
-    position: relative;
-    right: 0; 
+    position: relative; 
+    justify-content: flex-end;
+    font-size: 12px;  
 }
 
 .footer-nav > nav li {
     float: left;
+    padding: 0 10px 0 10px;
 }
  
 @media screen and (max-width:1774px) {
