@@ -18,7 +18,6 @@ function subMenuDetailChangeController(subDetailMenu) {
 // 메인 메뉴 세부 옵션 컨트롤
 function mainMenuController(mainMenuOptionOrder) { 
     const mainMenuOptionList = document.querySelector(`#main-menu > nav > ul > li:nth-child(${mainMenuOptionOrder + 2}) > ul`);
-     
     mainMenuOptionList.style.display = 'block';
 }
 
