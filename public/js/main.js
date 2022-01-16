@@ -2,7 +2,48 @@ const outlineTap = document.getElementById('outline-tap');
 const techSpecTap = document.getElementById('tech-spec-tap'); 
 const outline = document.getElementsByClassName('outline');
 const techSpec = document.getElementsByClassName('tech-spec'); 
+const screenWidth = window.innerWidth;
   
+
+// 메인 메뉴 외 부분 선택시 메인 메뉴 숨김
+function mainMenuOnOff() {
+    const mainMenu = document.querySelector('#main-menu > nav');
+    const mainMenuOptionList = document.querySelectorAll('#main-menu > nav > ul > li > ul');
+
+    mainMenu.style.display = 'none'; 
+    
+    if(screenWidth <= 859) {
+        for(let i = 0; i < mainMenuOptionList.length-1; i++) { 
+            mainMenuOptionList[i + 1].style.display = 'none';
+        } 
+    } 
+}
+
+// 서브 메뉴 외 부분 선택시 메인 메뉴 숨김
+function subMenuOnOff() {
+    const subMenu = document.querySelector('#sub-menu');
+    const subMenuOptionList = document.querySelectorAll('#sub-menu li > div > div');
+    const sub2OptionList = document.querySelectorAll(`#sub-menu2 > div > ul > li > ul`);
+    const sub3OptionList = document.querySelectorAll(`#sub-menu3 > div > ul > li > ul`); 
+    
+    if(screenWidth <= 859) {
+        subMenu.style.display = 'none'; 
+
+        for(let i = 0; i < sub2OptionList.length; i++) {
+            console.log(sub2OptionList[i])
+            sub2OptionList[i].style.display = 'none';
+        }
+        for(let i = 0; i < sub3OptionList.length; i++) { 
+            sub3OptionList[i].style.display = 'none';
+        }
+    } 
+
+    for(let i = 0; i < subMenuOptionList.length; i++) { 
+        subMenuOptionList[i].style.display = 'none';
+    } 
+    
+}
+
 // 서브 메뉴 큰 카테고리 컨트롤
 function subMenuChangeController(subMenu, notSub1, notSub2) { 
     notSub1.style.display = 'none';
@@ -40,7 +81,7 @@ function mainMenuController(mainMenuOptionOrder) {
     const videoListPtag = document.querySelectorAll('#video-info-content ul li p');
     const videoListOrder = document.querySelector(`#video-info-content ul li:nth-child(${order+1}) p`);
    
-    for(let i=0; i<videoListPtag.length; i++) {
+    for(let i = 0; i < videoListPtag.length; i++) {
         videoListPtag[i].style.display = 'none';
     }
     videoListOrder.style.display = displayStatus;
@@ -53,11 +94,11 @@ function mainMenuController(mainMenuOptionOrder) {
     const program = document.querySelector(`#program-info > div > div:nth-child(${order+1})`);
     const logo = document.querySelector(`#logo-wrap > div:nth-child(${order+1})`);
   
-    for(let i=0; i<programList.length-1; i++) { 
+    for(let i = 0; i < programList.length-1; i++) { 
         programList[i].style.display = 'none'; 
     }
 
-    for(let i=0; i<logoList.length; i++) { 
+    for(let i = 0; i < logoList.length; i++) { 
         logoList[i].style.backgroundPosition = '50% 0%'; 
         logoList[i].style.display = 'block';
     }
@@ -122,7 +163,7 @@ function mainMenuController(mainMenuOptionOrder) {
 (function videoMenu() {
     const videoList = document.querySelectorAll('#video-info-content ul li button')
   
-    for(let i=0; i<videoList.length; i++) {
+    for(let i = 0; i < videoList.length; i++) {
         videoList[i].addEventListener('click', function(){ 
             videoMenuChangeController('block', i);
         });
@@ -131,10 +172,10 @@ function mainMenuController(mainMenuOptionOrder) {
    
 // 개요, 기술 사양 활성화 구역 클래스 추가
 (function startScreenStyle() { 
-    for(let i=0; i<outline.length; i++) {
+    for(let i = 0; i < outline.length; i++) {
         outline[i].classList.add('active');
     } 
-    for(let i=0; i<techSpec.length; i++) {
+    for(let i = 0; i < techSpec.length; i++) {
         techSpec[i].classList.add('inactive');
     } 
 })();
@@ -142,19 +183,19 @@ function mainMenuController(mainMenuOptionOrder) {
 
 // 개요, 기술 사양 탭 전환 버튼 클릭 부분
 outlineTap.addEventListener('click', function() {
-    for(let i=0; i<outline.length; i++) { 
+    for(let i = 0; i < outline.length; i++) { 
         outline[i].classList.replace('inactive', 'active');
     } 
-    for(let j=0; j<techSpec.length; j++) { 
+    for(let j = 0; j < techSpec.length; j++) { 
         techSpec[j].classList.replace('active', 'inactive');
     }
 });
 
 techSpecTap.addEventListener('click', function() {
-    for(let i=0; i<techSpec.length; i++) { 
+    for(let i = 0; i < techSpec.length; i++) { 
         techSpec[i].classList.replace('inactive', 'active');
     }  
-    for(let j=0; j<outline.length; j++) { 
+    for(let j = 0; j < outline.length; j++) { 
         outline[j].classList.replace('active', 'inactive');
     }
 });
@@ -181,6 +222,16 @@ document.addEventListener('scroll', function() {
     } else {
         contentWrap.classList.remove('content-design');
     }
+});
+ 
+// 메인/서브 메뉴 외 엘리먼트 선택시 메뉴 숨기는 함수
+window.addEventListener('click', (e)=> {  
+    if(!e.target.closest('#main-menu')) { 
+        mainMenuOnOff();
+    }  
+    if(!e.target.closest('#sub-menu') && !e.target.closest('#surface > button')) { 
+        subMenuOnOff();
+    } 
 });
 
 // 슬라이드 js 생성 > 실행
