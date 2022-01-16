@@ -11,8 +11,18 @@ function subMenuChangeController(subMenu, notSub1, notSub2) {
 }
 
 // 서브 메뉴 안의 세부 메뉴 버튼 컨트롤
-function subMenuDetailChangeController(subDetailMenu) { 
-    subDetailMenu.style.display = 'block';
+function subMenuDetailChangeController(subMenuOption, subOptionOrder) { 
+    if(subMenuOption !== 'sub2' && subMenuOption !== 'sub3') {
+        throw new Error("subMenuOption not exiteds");
+    }
+
+    if(subMenuOption === 'sub2') {
+        const sub2OptionList = document.querySelector(`#sub-menu2 > div > ul > li:nth-child(${subOptionOrder + 1}) > ul`);   
+        sub2OptionList.style.display = 'block';  
+    } else if(subMenuOption === 'sub3') {
+        const sub3OptionList = document.querySelector(`#sub-menu3 > div > ul > li:nth-child(${subOptionOrder + 1}) > ul`); 
+        sub3OptionList.style.display = 'block';
+    } 
 }
  
 // 메인 메뉴 세부 옵션 컨트롤
@@ -80,34 +90,22 @@ function mainMenuController(mainMenuOptionOrder) {
 })(); 
 
 // 서브 메뉴의 세부 메뉴
-(function subDetailSubMenuChange() {
-    const sub2Twoinwon = document.querySelector('#sub-menu2 > div > ul > li:nth-child(1) > ul');
-    const sub2Laptop = document.querySelector('#sub-menu2 > div > ul > li:nth-child(2) > ul');
-    const sub3TwoinwonTable = document.querySelector('#sub-menu3 > div > ul > li:nth-child(1) > ul');
-    const sub3Laptop = document.querySelector('#sub-menu3 > div > ul > li:nth-child(2) > ul');
-    const sub3BigScreen = document.querySelector('#sub-menu3 > div > ul > li:nth-child(3) > ul');
-    const sub3Support = document.querySelector('#sub-menu3 > div > ul > li:nth-child(4) > ul');
-
-    const sub2TwoinwonButton = document.querySelector('#sub-menu2 > div > ul > li:nth-child(1) > button');
-    const sub2LaptopButton = document.querySelector('#sub-menu2 > div > ul > li:nth-child(2) > button');
-    const sub3TwoinwonTableButton = document.querySelector('#sub-menu3 > div > ul > li:nth-child(1) > button');
-    const sub3LaptopButton = document.querySelector('#sub-menu3 > div > ul > li:nth-child(2) > button');
-    const sub3BigScreenButton = document.querySelector('#sub-menu3 > div > ul > li:nth-child(3) > button');
-    const sub3SupportButton = document.querySelector('#sub-menu3 > div > ul > li:nth-child(4) > button');
+(function subDetailSubMenuChange() {  
+    const subMenu2Button = document.querySelectorAll('#sub-menu2 > div > ul > li > button');
+    const subMenu3Button = document.querySelectorAll('#sub-menu3 > div > ul > li > button');
     
-    sub2TwoinwonButton.addEventListener('click', ()=> subMenuDetailChangeController(sub2Twoinwon));
-    sub2LaptopButton.addEventListener('click', ()=> subMenuDetailChangeController(sub2Laptop));
-    sub3TwoinwonTableButton.addEventListener('click', ()=> subMenuDetailChangeController(sub3TwoinwonTable));
-    sub3LaptopButton.addEventListener('click', ()=> subMenuDetailChangeController(sub3Laptop));
-    sub3BigScreenButton.addEventListener('click', ()=> subMenuDetailChangeController(sub3BigScreen));
-    sub3SupportButton.addEventListener('click', ()=> subMenuDetailChangeController(sub3Support));
+    for(let i = 0; i < subMenu2Button.length; i++) {
+        subMenu2Button[i].addEventListener('click', ()=> subMenuDetailChangeController('sub2', i)); 
+    }   
+    for(let i = 0; i < subMenu3Button.length; i++) {
+        subMenu3Button[i].addEventListener('click', ()=> subMenuDetailChangeController('sub3', i)); 
+    }  
 })();
 
 // 메인 메뉴
 (function mainMenuDisplay() {
     const mainMenu = document.querySelector('#main-menu > nav');
     const mainMenuButton = document.querySelector('#main-menu');
-
     mainMenuButton.addEventListener('click', ()=> mainMenu.style.display = 'block');
     
 })();
@@ -115,7 +113,6 @@ function mainMenuController(mainMenuOptionOrder) {
 // 메인 메뉴의 세부 메뉴
 (function mainMenuSubMenu() {   
     const mainMenuButton = document.querySelectorAll('#main-menu > nav > ul > li > button');
-    
     for(let i = 0; i < mainMenuButton.length; i++) {
         mainMenuButton[i].addEventListener('click', ()=> mainMenuController(i)); 
     } 
