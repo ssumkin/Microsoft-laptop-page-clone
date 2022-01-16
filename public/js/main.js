@@ -2,14 +2,7 @@ const outlineTap = document.getElementById('outline-tap');
 const techSpecTap = document.getElementById('tech-spec-tap'); 
 const outline = document.getElementsByClassName('outline');
 const techSpec = document.getElementsByClassName('tech-spec'); 
- 
-
-// 헤더의 surface 메뉴 컨트롤
-function surfaceMenuController(surface) {
-    surface.style.display = 'block';
-}
-
-
+  
 // 서브 메뉴 큰 카테고리 컨트롤
 function subMenuChangeController(subMenu, notSub1, notSub2) { 
     notSub1.style.display = 'none';
@@ -21,17 +14,12 @@ function subMenuChangeController(subMenu, notSub1, notSub2) {
 function subMenuDetailChangeController(subDetailMenu) { 
     subDetailMenu.style.display = 'block';
 }
-
-// 메인 메뉴(마소 관련) 메뉴 컨트롤 
-function mainMenuOnOff(mainMenu) {
-    console.log(mainMenu)
-    mainMenu.style.display = 'block';
-}
-
+ 
 // 메인 메뉴 세부 옵션 컨트롤
-function mainMenuController(mainMenuOption) {
-    console.log(mainMenuOption)
-    mainMenuOption.style.display = 'block';
+function mainMenuController(mainMenuOptionOrder) { 
+    const mainMenuOptionList = document.querySelector(`#main-menu > nav > ul > li:nth-child(${mainMenuOptionOrder + 2}) > ul`);
+     
+    mainMenuOptionList.style.display = 'block';
 }
 
 /**
@@ -74,7 +62,7 @@ function mainMenuController(mainMenuOption) {
     const subMenu = document.querySelector('#sub-menu');
     const surfaceButton = document.querySelector('#surface > button');
     
-    surfaceButton.addEventListener('click', () => surfaceMenuController(subMenu));
+    surfaceButton.addEventListener('click', () => subMenu.style.display = 'block');
 })();
   
 // 서브 메뉴
@@ -121,32 +109,17 @@ function mainMenuController(mainMenuOption) {
     const mainMenu = document.querySelector('#main-menu > nav');
     const mainMenuButton = document.querySelector('#main-menu');
 
-    mainMenuButton.addEventListener('click', ()=> mainMenuOnOff(mainMenu));
+    mainMenuButton.addEventListener('click', ()=> mainMenu.style.display = 'block');
     
 })();
  
 // 메인 메뉴의 세부 메뉴
-(function mainMenuSubMenu() { 
-    const mainMenuSoftware = document.querySelector('#main-menu > nav > ul > li:nth-child(2) > ul');
-    const mainMenuPandD = document.querySelector('#main-menu > nav > ul > li:nth-child(3) > ul');
-    const mainMenuEnter = document.querySelector('#main-menu > nav > ul > li:nth-child(4) > ul');
-    const mainMenuBusiness = document.querySelector('#main-menu > nav > ul > li:nth-child(5) > ul');
-    const mainMenuDevelop = document.querySelector('#main-menu > nav > ul > li:nth-child(6) > ul');
-    const mainMenuEtc = document.querySelector('#main-menu > nav > ul > li:nth-child(7) > ul');
-
-    const mainMenuSoftwareButton = document.querySelector('#main-menu > nav > ul > li:nth-child(2) > button');
-    const mainMenuPandDButton = document.querySelector('#main-menu > nav > ul > li:nth-child(3) > button');
-    const mainMenuEnterButton = document.querySelector('#main-menu > nav > ul > li:nth-child(4) > button');
-    const mainMenuBusinessButton = document.querySelector('#main-menu > nav > ul > li:nth-child(5) > button');
-    const mainMenuDevelopButton = document.querySelector('#main-menu > nav > ul > li:nth-child(6) > button');
-    const mainMenuEtcButton = document.querySelector('#main-menu > nav > ul > li:nth-child(7) > button');
-
-    mainMenuSoftwareButton.addEventListener('click', ()=> mainMenuController(mainMenuSoftware));
-    mainMenuPandDButton.addEventListener('click', ()=> mainMenuController(mainMenuPandD));
-    mainMenuEnterButton.addEventListener('click', ()=> mainMenuController(mainMenuEnter));
-    mainMenuBusinessButton.addEventListener('click', ()=> mainMenuController(mainMenuBusiness));
-    mainMenuDevelopButton.addEventListener('click', ()=> mainMenuController(mainMenuDevelop));
-    mainMenuEtcButton.addEventListener('click', ()=> mainMenuController(mainMenuEtc)); 
+(function mainMenuSubMenu() {   
+    const mainMenuButton = document.querySelectorAll('#main-menu > nav > ul > li > button');
+    
+    for(let i = 0; i < mainMenuButton.length; i++) {
+        mainMenuButton[i].addEventListener('click', ()=> mainMenuController(i)); 
+    } 
 })();
 
 // 비디오 메뉴
@@ -179,7 +152,7 @@ outlineTap.addEventListener('click', function() {
     for(let j=0; j<techSpec.length; j++) { 
         techSpec[j].classList.replace('active', 'inactive');
     }
-})
+});
 
 techSpecTap.addEventListener('click', function() {
     for(let i=0; i<techSpec.length; i++) { 
@@ -188,19 +161,19 @@ techSpecTap.addEventListener('click', function() {
     for(let j=0; j<outline.length; j++) { 
         outline[j].classList.replace('active', 'inactive');
     }
-})
+});
  
 // 프로그램 로고 클릭 시 프로그램 이미지 변경
-function logoClickController() {
+(function logoClickController() {
     const logoList = document.querySelectorAll('#logo-wrap > div');
-    for(let k=0; k<logoList.length; k++) {  
-        logoList[k].addEventListener('click', function() { 
-            programChangeController(k);
+    for(let i = 0; i < logoList.length; i++) {  
+        logoList[i].addEventListener('click', function() { 
+            programChangeController(i);
         });
     }
-}
+})();
 
-logoClickController();
+// logoClickController();
 
 // 화면 스크롤 할 경우 개요/기술 사양 메뉴 부분 디자인 바꿔주는 역할
 document.addEventListener('scroll', function() {
@@ -216,7 +189,7 @@ document.addEventListener('scroll', function() {
 
 // 슬라이드 js 생성 > 실행
 let splide = new Splide( '.splide' , {
-    type    : 'loop' 
+    type: 'loop' 
 });
 
 splide.mount();  

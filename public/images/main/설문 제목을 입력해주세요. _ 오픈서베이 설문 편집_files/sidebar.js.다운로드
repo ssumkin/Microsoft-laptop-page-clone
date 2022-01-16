@@ -1,0 +1,337 @@
+var DETAIL_TARGETING_ITEMS = Object.freeze({
+    '나이': [
+        {
+            name: '10대 (만 14~19세)',
+            unitPrice: 0
+        },
+        {
+            name: '60대 이상',
+            unitPrice: 0
+        },
+    ],
+    '직업': [
+        {
+            name: '대학(원)생',
+            unitPrice: 1000
+        },
+        {
+            name: '직장인',
+            unitPrice: 1000
+        },
+        {
+            name: '자영업자',
+            unitPrice: 2500
+        },
+        {
+            name: '전업주부',
+            unitPrice: 1000
+        },
+        {
+            name: '스타트업 재직자',
+            unitPrice: 15000
+        },
+    ],
+    '가족': [
+        {
+            name: '1인 가구',
+            unitPrice: 5000
+        },
+        {
+            name: '2인 가구',
+            unitPrice: 2500
+        },
+        {
+            name: '0~36개월 자녀를 둔 부모',
+            unitPrice: 2500
+        },
+        {
+            name: '만 3세 이상~취학 전 자녀를 둔 부모',
+            unitPrice: 2500
+        },
+        {
+            name: '초등학생 자녀를 둔 부모',
+            unitPrice: 5000
+        },
+        {
+            name: '중고생 자녀를 둔 부모',
+            unitPrice: 2500
+        },
+        {
+            name: '반려견을 기르는 사람',
+            unitPrice: 2500
+        },
+        {
+            name: '반려묘를 기르는 사람',
+            unitPrice: 5000
+        },
+    ],
+    '구매 채널': [
+        {
+            name: '최근 3개월 내 온라인/모바일 쇼핑 경험자',
+            unitPrice: 500
+        },
+        {
+            name: '최근 3개월 내 대형마트 쇼핑 경험자',
+            unitPrice: 500
+        },
+        {
+            name: '최근 3개월 내 편의점 구매 경험자',
+            unitPrice: 500
+        },
+        {
+            name: '최근 3개월 내 드럭스토어 구매 경험자',
+            unitPrice: 1000
+        }
+    ],
+    '구매 제품': [
+        {
+            name: '최근 3개월 내 식료품 구매자',
+            unitPrice: 500
+        },
+        {
+            name: '최근 3개월 내 화장품 구매자',
+            unitPrice: 500
+        },
+        {
+            name: '최근 3개월 내 맥주 구매자',
+            unitPrice: 500
+        },
+        {
+            name: '최근 3개월 내 담배 구매자',
+            unitPrice: 1000
+        },
+    ],
+    '보유 여부': [
+        {
+            name: '자동차 보유자',
+            unitPrice: 1000
+        },
+        {
+            name: 'AI 스피커 보유자',
+            unitPrice: 2500
+        },
+        {
+            name: '공기청정기 보유자',
+            unitPrice: 1000
+        },
+    ],
+    '금융': [
+        {
+            name: '신용카드 사용자',
+            unitPrice: 500
+        },
+        {
+            name: '모바일 뱅킹 앱 사용자',
+            unitPrice: 500
+        },
+        {
+            name: '간편결제 사용자',
+            unitPrice: 500
+        },
+        {
+            name: '대출 경험자',
+            unitPrice: 5000
+        },
+        {
+            name: '주식투자 경험자',
+            unitPrice: 2500
+        },
+    ],
+    'OS': [
+        {
+            name: 'iOS 사용자',
+            unitPrice: 500
+        },
+        {
+            name: '안드로이드 사용자',
+            unitPrice: 500
+        },
+    ],
+    '직접 입력': []
+});
+
+var QUESTION_PRICE_LIST_PER_PERSON = [800, 1400, 2000, 2700, 3400, 4400];
+var OPERATION_COST = 100000;
+var detailTargetingUnitPrice = 0;
+var selectQuestionNumber = 1;
+var selectPeopleNumber = 0;
+var isSetGenExtra = false;
+
+var setPeopleNumber = function(number) {
+    selectPeopleNumber = number;
+    changePrice();
+}
+
+var setDetailTargetingUnitPrice = function(unitPrice) {
+    detailTargetingUnitPrice = unitPrice;
+    changePrice();
+}
+
+var setSelectQuestionNumber = function(number) {
+    selectQuestionNumber = number;
+    changePrice();
+}
+
+var changeGenExtra = function(bool) {
+    isSetGenExtra = bool;
+    changePrice();
+}
+
+var changePrice = function() {
+    var isQuick = selectQuestionNumber <= 19 &&
+        detailTargetingUnitPrice === 0 &&
+        !$('#awesomeButtonDetailTargetingDropdownMenu').hasClass('selected') &&
+        !isSetGenExtra;
+    var operationCost = OPERATION_COST
+
+    if(isQuick) {
+        operationCost = 0;
+        $('#sidebar-calculator').addClass('quick')
+        $('#what-is-quick').css('display', 'inline-block')
+    } else {
+        $('#sidebar-calculator').removeClass('quick')
+        $('#what-is-quick').css('display', 'none')
+    }
+
+    if(selectQuestionNumber >= 50) {
+        $('.smaller_50_questions').css('display', 'none')
+        $('.bigger_50_questions').css('display', 'block')
+    } else {
+        $('.smaller_50_questions').css('display', 'block')
+        $('.bigger_50_questions').css('display', 'none')
+    }
+
+    if(detailTargetingUnitPrice < 0 || $('.checked-premium').length > 0 || $('.checked-extra').length > 0 || isSetGenExtra) {
+        // 상세 타겟팅 직접 입력 시 다른 TEXT 를 보여주기 위함
+        $('.impossible_calculation_input_detail').removeClass('hide')
+        $('.possible_calculation').addClass('hide')
+        $('#sidebar-calculator-popover-1').addClass('hide')
+        return;
+    } else {
+        $('#sidebar-calculator-popover-1').removeClass('hide')
+        $('.possible_calculation').removeClass('hide')
+        $('.impossible_calculation_input_detail').addClass('hide')
+    }
+
+    $('#operating-cost').text(operationCost.toLocaleString().split('.')[0]);
+
+    $('#real-questions-number').text(selectQuestionNumber)
+
+    $('#collect-sample-cost-per-person').text(detailTargetingUnitPrice.toLocaleString().split('.')[0])
+    $('#collect-sample-respondents-number').text(selectPeopleNumber)
+    $('#collect-sample-cost').text((detailTargetingUnitPrice*selectPeopleNumber).toLocaleString().split('.')[0])
+
+    var questionPricePerPerson = selectQuestionNumber > 0 && selectQuestionNumber < 50 ? QUESTION_PRICE_LIST_PER_PERSON[parseInt(selectQuestionNumber / 10)] : 0
+    $('#questions-cost-per-person').text(questionPricePerPerson.toLocaleString().split('.')[0])
+    $('#question-respondents-number').text(selectPeopleNumber)
+    $('#questions-cost').text((questionPricePerPerson*selectPeopleNumber).toLocaleString().split('.')[0])
+
+    var finalPrice = detailTargetingUnitPrice*selectPeopleNumber + questionPricePerPerson*selectPeopleNumber + operationCost
+    $('#final-cost').text(finalPrice.toLocaleString().split('.')[0])
+    $('#vat-cost').text(parseInt(finalPrice / 10).toLocaleString().split('.')[0])
+    $('#sum-cost').text(parseInt(finalPrice * 1.1).toLocaleString().split('.')[0])
+
+    $('.sidebar-left-body').removeClass('moreThan50Questions')
+    $('.cost-group > .description').removeClass('hide')
+    $('.moreThan50QuestionsDescription').addClass('hide')
+
+    if(selectQuestionNumber >= 50) {
+        if($('.moreThan50QuestionsDescription').hasClass('completely-hide')) {
+            $('.sidebar-left-body').addClass('moreThan50Questions')
+        } else {
+            $('.moreThan50QuestionsDescription').removeClass('hide')
+        }
+        $('.cost-group > .description').addClass('hide')
+        $('.cost').text('-')
+    }
+}
+
+$(function () {
+    var sidebarLeftWidth = 320
+    var sidebarRightWidth = 60
+
+    $('.sidebar-button').on('classChange', function () {
+        if ($('.sidebar-button.active').length > 0) {
+            $('.sidebar > .left').css('visibility', 'hidden')
+
+            if($('#sidebar-calculator-button').hasClass('active')) {
+                $('#sidebar-calculator').css('visibility', 'visible')
+            }
+
+            if($('#sidebar-preview-button').hasClass('active')) {
+                $('#sidebar-preview').css('visibility', 'visible')
+            }
+
+            if($('#sidebar-fix-error-button').hasClass('active')) {
+                $('#sidebar-fix-error').css('visibility', 'visible')
+            }
+
+            $('.sidebar > .left').css('right', sidebarRightWidth + 'px')
+        } else {
+            $('.sidebar > .left').css('right', -1 * sidebarLeftWidth + 'px')
+        }
+    })
+
+    $('[data-toggle="sidebar-tooltip"]').tooltip()
+    $('[data-toggle="sidebar-popover"]').popover({
+        html: true,
+        template: '<div class="popover sidebar-popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'
+    })
+
+    var $sidebarButton = $('.sidebar-button')
+
+    $sidebarButton.click(function () {
+        var $this = $(this)
+        var isActive = $this.hasClass('active')
+
+        if($this.hasClass('disabled')) return false
+
+        $sidebarButton.removeClass('active')
+
+        if (isActive) {
+            $this.removeClass('active')
+        } else {
+            $this.addClass('active')
+        }
+
+        $sidebarButton.trigger('classChange')
+    })
+
+    var $sidebarHideButton = $('.hide-sidebar');
+    $sidebarHideButton.click(function () {
+        $sidebarButton.removeClass('active').trigger('classChange');
+    });
+
+    $('.questions-number-sections .section').click(function() {
+        var index = $(this).index()
+        if(index+1 == $('.questions-number-sections .section').length) {
+            $('.questions-number-sections .section').addClass('red')
+            $('#request_estimate_button').css('display', 'none')
+        } else {
+            $('.questions-number-sections .section').removeClass('red')
+            $('.questions-number-sections .section').removeClass('active')
+            $('.questions-number-sections .section').slice(0, $(this).index()+1).addClass('active')
+            $('#request_estimate_button').css('display', 'block')
+        }
+        $('.tooltips div').removeClass('active')
+        $('.tooltips div').eq($(this).index()).addClass('active')
+        setSelectQuestionNumber($(this).index() * 10 + 1)
+    })
+
+    $('#sidebar-scroll-top-button').click(function() {
+        document.documentElement.scrollTop = 0
+    })
+
+    $('#what-is-quick').popover({
+        html: true,
+        trigger: 'hover',
+        placement: 'bottom',
+        content: '<strong>퀵 구간이란?</strong>' +
+            '<p>기본 타겟팅으로 19문항 이내의 조사일 경우 퀵 구간 할인이 적용 됩니다.</p>' +
+            '<div>예시</div>' +
+            '<span>응답인원 50명 설문 : 1~9문항 4만원, 10~19문항 7만원 <span>(부가세 별도)</span><br/>' +
+            '응답인원 100명 설문 : 1~9문항 8만원, 10~19문항 14만원 <span>(부가세 별도)</span></span>',
+        viewport: { selector: 'body', padding: 70 },
+        template: '<div class="popover quick-popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'
+    })
+})

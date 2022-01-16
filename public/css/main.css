@@ -1223,6 +1223,8 @@ footer .col-sm-4 ul li {
 
     #main-menu > nav > ul > li button {
         font-weight: 400;
+        width: 100%;
+        text-align: left;
     }
 
     #main-menu > nav > ul > li button::after {
